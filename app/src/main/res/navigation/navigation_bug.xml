@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_bug"
+    app:startDestination="@id/bugListFragment">
+
+    <fragment
+        android:id="@+id/bugListFragment"
+        android:name="com.example.myapplication.presentation.bug.BugListFragment"
+        android:label="BugListFragment" >
+        <action
+            android:id="@+id/action_bugListFragment_to_bugItemFragment"
+            app:destination="@id/bugItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bugItemFragment"
+        android:name="com.example.myapplication.presentation.bug.BugItemFragment"
+        android:label="BugItemFragment" />
+</navigation>

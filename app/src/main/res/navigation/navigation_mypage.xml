@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_mypage"
+    app:startDestination="@id/myPageMainFragment">
+
+    <fragment
+        android:id="@+id/myPageMainFragment"
+        android:name="com.example.myapplication.presentation.mypage.MyPageMainFragment"
+        android:label="MyPageMainFragment" >
+        <action
+            android:id="@+id/action_myPageMainFragment_to_myPageSurveyDetailListFragment"
+            app:destination="@id/myPageSurveyDetailListFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_myPageProductInterestListFragment"
+            app:destination="@id/myPageProductInterestListFragment" />
+        <action
+            android:id="@+id/action_myPageMainFragment_to_myPageCompanyDetailListFragment"
+            app:destination="@id/myPageCompanyDetailListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPageSurveyDetailListFragment"
+        android:name="com.example.myapplication.presentation.mypage.MyPageSurveyDetailListFragment"
+        android:label="MyPageSurveyDetailListFragment" >
+        <action
+            android:id="@+id/action_myPageSurveyDetailListFragment_to_surveyResultFragment"
+            app:destination="@id/surveyResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyResultFragment"
+        android:name="com.example.myapplication.presentation.survey.SurveyResultFragment"
+        android:label="SurveyResultFragment" />
+    <fragment
+        android:id="@+id/myPageProductInterestListFragment"
+        android:name="com.example.myapplication.presentation.mypage.MyPageProductInterestListFragment"
+        android:label="MyPageProductInterestListFragment" >
+        <action
+            android:id="@+id/action_myPageProductInterestListFragment_to_productItemFragment2"
+            app:destination="@id/productItemFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/productItemFragment2"
+        android:name="com.example.myapplication.presentation.product.ProductItemFragment"
+        android:label="ProductItemFragment" />
+    <fragment
+        android:id="@+id/myPageCompanyDetailListFragment"
+        android:name="com.example.myapplication.presentation.mypage.MyPageCompanyDetailListFragment"
+        android:label="MyPageCompanyDetailListFragment" >
+        <action
+            android:id="@+id/action_myPageCompanyDetailListFragment_to_myPageCompanyDetailItemFragment"
+            app:destination="@id/myPageCompanyDetailItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPageCompanyDetailItemFragment"
+        android:name="com.example.myapplication.presentation.mypage.MyPageCompanyDetailItemFragment"
+        android:label="MyPageCompanyDetailItemFragment" />
+</navigation>
