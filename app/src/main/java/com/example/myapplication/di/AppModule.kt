@@ -1,10 +1,13 @@
 package com.example.myapplication.di
 
 import android.app.Activity
+import com.example.myapplication.BuildConfig
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.preference.PreferenceManager
 import com.example.myapplication.data.preference.SharedPreferenceManager
 import kotlinx.coroutines.Dispatchers
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -19,11 +22,27 @@ val appModule = module {
     single<PreferenceManager> { SharedPreferenceManager(get()) }
 
     // Retrofit
+    single {
+        OkHttpClient()
+            .newBuilder()
+            .addInterceptor(
+                HttpLoggingInterceptor().apply {
+                    level = if (BuildConfig.DEBUG) {
+                        HttpLoggingInterceptor.Level.BODY
+                    } else {
+                        HttpLoggingInterceptor.Level.NONE
+                    }
+                }
+            )
+            .build()
+    }
+
     /* todo baseUrl 추가
     single<UserApi> {
         Retrofit.Builder().baseUrl()
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+            .client(get())
             .create()
     }
      */
