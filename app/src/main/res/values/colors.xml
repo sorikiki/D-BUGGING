@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#9E9E9E</color>
+
+    <!--    custom grey    -->
+    <color name="dark_grey">#333333</color>
+    <color name="light_grey">#f0f0f0</color>
+
+    <!--    custom orange   -->
+    <color name="orange">#ffc74f</color>
+    <color name="deeper_orange">#ffbb00</color>
+    <!--    custom green    -->
+    <color name="green">#2AD14E</color>
+    <color name="dark_green">#578324</color>
 </resources>

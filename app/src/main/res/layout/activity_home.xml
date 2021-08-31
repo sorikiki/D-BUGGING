@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,17 +18,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/app_title"
+                android:text="@string/main_title"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
 
-        <LinearLayout
-            android:id="@+id/home_content_layout"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ScrollView
+            android:id="@+id/mainContainerScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" />
+            android:clipToPadding="false"
+            android:paddingVertical="24dp">
+
+            <LinearLayout
+                android:id="@+id/mainContainerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView

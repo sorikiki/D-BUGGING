@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg.xml" value="0.14114583333333333" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg2.xml" value="0.13796296296296295" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_email.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_house.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_person.xml" value="0.14114583333333333" />
@@ -11,7 +12,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/input_bg.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_bug.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_company.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_home.xml" value="0.14285714285714285" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_login.xml" value="0.14285714285714285" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_mypage.xml" value="0.125" />

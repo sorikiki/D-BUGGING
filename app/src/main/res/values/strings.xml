@@ -1,4 +1,14 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="app_title">:D-BUGGING</string>
+    <string name="app_name">D-BUGGING</string>
+    <string name="main_title">:D - BUGGING</string>
+    <string name="input_content">내용을 입력해주세요</string>
+    <string name="register_completed">가입하기</string>
+    <string name="frequently_seen_recently">여름에 자주 보여요</string>
+    <string name="chosen_best_pest_3">방역 업체 선정 해충 TOP 3</string>
+    <string name="go_pest_explanation_string">벌레 도감 바로 가기</string>
+    <string name="sign_in_string">로그인</string>
+    <string name="sign_up_string">회원가입</string>
+    <string name="post_address">우편번호</string>
+    <string name="address">도로명 주소</string>
+    <string name="detail_address">상세 주소</string>
 </resources>

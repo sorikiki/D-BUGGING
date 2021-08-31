@@ -20,6 +20,11 @@ class RegisterFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bindViews()
+    }
+
+    private fun bindViews() {
+
     }
 
     override fun onDestroyView() {
