@@ -19,6 +19,7 @@ class LoginActivity: AppCompatActivity() {
         val logInButton = findViewById<Button>(R.id.btn_login)
         logInButton.setOnClickListener {
 
+
         }
 
         val registerButton = findViewById<Button>(R.id.btn_register)

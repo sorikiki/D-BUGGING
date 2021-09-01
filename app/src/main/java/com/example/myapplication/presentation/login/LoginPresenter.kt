@@ -1,4 +1,9 @@
 package com.example.myapplication.presentation.login
 
-class LoginPresenter {
+class LoginPresenter(
+    private val userRepository: UserRepository
+    private val view: LoginActivity
+)   {
+
+
 }

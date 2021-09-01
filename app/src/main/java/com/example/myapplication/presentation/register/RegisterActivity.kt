@@ -17,7 +17,6 @@ class RegisterActivity: AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         initViews()
-        bindViews()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -31,13 +30,4 @@ class RegisterActivity: AppCompatActivity() {
         setupActionBarWithNavController(navigationController)
     }
 
-    private fun bindViews() {
-        navigationController.addOnDestinationChangedListener { _, destination, _ ->
-            title = if (destination.id == R.id.registerFragment) {
-                resources.getString(R.string.sign_up_string)
-            } else {
-                resources.getString(R.string.main_title)
-            }
-        }
-    }
 }
