@@ -19,6 +19,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_product.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_register.xml" value="0.10285714285714286" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_survey.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/company_item.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_item.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_list.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_item.xml" value="0.125" />
@@ -42,6 +43,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_result.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_start.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_item_view.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_question_view.xml" value="0.125" />
       </map>
     </option>
   </component>

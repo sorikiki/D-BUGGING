@@ -1,21 +1,31 @@
 package com.example.myapplication.data.api
 
-import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.Path
+import com.example.myapplication.data.api.UserApi.Companion.USER_ENDPOINT
+import com.example.myapplication.data.api.response.UserResponse
 import retrofit2.Call
+import retrofit2.http.*
 
 interface UserApi {
-    //todo 회원가입 POST
+    // 회원가입
+    @Headers("accept: application/json", "content-type: application/json")
+    @POST(USER_ENDPOINT)
+    suspend fun signUpUser(@Body userInfo: UserInfo): Call<UserResponse>
 
-    //todo 로그인 GET
+    // 로그인
+    @GET(USER_ENDPOINT)
+    suspend fun signInUser(
+        @Query("user_id") userId: String,
+        @Query("user_password") userPassword: String
+    ): Call<UserResponse>
 
-    //todo 회원탈퇴 POST
+    // 회원탈퇴
+    @DELETE(USER_ENDPOINT)
+    suspend fun deleteUser(
+        @Query("user_id") userId: String,
+        @Query("user_password") userPassword: String
+    ): Call<UserResponse>
 
-    //todo 누적업체이용량+1 POST
-
-    /* Sample
-    @GET("api/subway/${BuildConfig.SEOUL_API_ACCESS_KEY}/json/realtimeStationArrival/0/100/{stationName}")
-    suspend fun getRealtimeStationArrivals(@Path("stationName") stationName: String): Response<RealtimeStationArrivals>
-     */
+    companion object {
+        const val USER_ENDPOINT = "/users"
+    }
 }

@@ -4,9 +4,6 @@ import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.preference.PreferenceManager
 import kotlinx.coroutines.CoroutineDispatcher
 
-// 로그인을 하면 mysql이랑도 통신
-// sharedPreference에 유저아이디랑 네임을 저장
-// Room에도 캐싱
 class UserRepositoryImpl(
     private val userApi: UserApi,
     private val preferenceManager: PreferenceManager,
@@ -23,10 +20,6 @@ class UserRepositoryImpl(
 
     override suspend fun clearUser() {
         //todo userApi 의 회원탈퇴 함수 호출
-    }
-
-    override suspend fun incrementNumberOfCompanyUsages() {
-        //todo 업체이용량 증가 함수 호출
     }
 
     private fun logOutUser() {
