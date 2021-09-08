@@ -14,15 +14,13 @@ interface UserApi {
     // 로그인
     @GET(USER_ENDPOINT)
     suspend fun signInUser(
-        @Query("user_id") userId: String,
-        @Query("user_password") userPassword: String
+        @Body userInfo: UserInfo
     ): Call<UserResponse>
 
     // 회원탈퇴
     @DELETE(USER_ENDPOINT)
     suspend fun deleteUser(
-        @Query("user_id") userId: String,
-        @Query("user_password") userPassword: String
+        @Body userInfo: UserInfo
     ): Call<UserResponse>
 
     companion object {
