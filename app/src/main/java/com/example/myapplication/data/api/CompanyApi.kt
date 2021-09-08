@@ -9,9 +9,7 @@ import retrofit2.http.*
 
 interface CompanyApi {
     @GET("/company")
-    suspend fun getCompanyList(
-        @Query("user_id") userId: String
-    ): Call<CompanyListResponse>
+    suspend fun getCompanyList(): Call<CompanyListResponse>
 
     @GET("/company/{company_id}/item")
     suspend fun getCompanyItem(
