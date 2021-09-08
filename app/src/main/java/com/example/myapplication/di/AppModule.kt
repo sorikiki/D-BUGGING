@@ -37,7 +37,6 @@ val appModule = module {
             .build()
     }
 
-    /* todo baseUrl 추가
     single<UserApi> {
         Retrofit.Builder().baseUrl()
             .addConverterFactory(GsonConverterFactory.create())
@@ -45,6 +44,10 @@ val appModule = module {
             .client(get())
             .create()
     }
-     */
+    
+    single<CompanyApi> {
+
+    }
+
 
 }
