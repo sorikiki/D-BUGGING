@@ -6,6 +6,4 @@ interface UserRepository {
     suspend fun processLogIn()
 
     suspend fun clearUser()
-
-    suspend fun incrementNumberOfCompanyUsages()
 }
