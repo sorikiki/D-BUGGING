@@ -10,13 +10,13 @@ data class UserInfo(
     val password: String,
 
     @SerializedName("name")
-    val name: String? = null,
+    val name: String,
 
     @SerializedName("contact_numbers")
-    val contactNumbers: String? = null,
+    val contactNumbers: String,
 
     @SerializedName("email")
-    val email: String? = null,
+    val email: String,
 
     @SerializedName("zip_code")
     val zipCode: Int? = null,
@@ -34,5 +34,5 @@ data class UserInfo(
     val numOfRooms: Int? = null,
 
     @SerializedName("accumulated_num_of_usages")
-    val accumulatedNumOfUsages: Int? = 0
+    val accumulatedNumOfUsages: Int = 0
 )
