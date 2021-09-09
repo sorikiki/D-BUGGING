@@ -2,7 +2,7 @@ package com.example.myapplication.data.api
 
 import com.example.myapplication.data.api.response.CompanyItemResponse
 import com.example.myapplication.data.api.response.CompanyListResponse
-import com.example.myapplication.data.api.response.ReservationDetailResponse
+import com.example.myapplication.data.api.response.ReservationCheckResponse
 import com.example.myapplication.data.api.response.ReservationResponse
 import retrofit2.Call
 import retrofit2.http.*
@@ -31,7 +31,7 @@ interface CompanyApi {
     suspend fun checkCompanyReservation(
         @Path("company_id") companyId: Int,
         @Path("reservation_id") reservationId: Int
-    ): Call<ReservationDetailResponse>
+    ): Call<ReservationCheckResponse>
 
     // 업체 찜하기 추가
     @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")

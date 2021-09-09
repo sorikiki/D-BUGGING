@@ -1,6 +1,6 @@
 package com.example.myapplication.data.api
 
-import com.example.myapplication.data.api.response.UserResponse
+import com.example.myapplication.data.api.response.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -22,4 +22,28 @@ interface UserApi {
     // 회원탈퇴
     @DELETE("/user")
     suspend fun removeUser()
+
+    // 마이페이지 메인 정보 조회
+    @GET("/user/mypage")
+    suspend fun getMyPageInformation(
+        @Query("user_id") userId: String
+    ): Call<UserDetailResponse>
+
+    // 마이페이지 나의 설문 더보기
+    @GET("/user/mypage/survey")
+    suspend fun getMyPageSurveyDetail(
+        @Query("user_id") userId: String
+    ): Call<MyPageSurveyDetailResponse>
+
+    // 마이페이지 찜한 퇴치법 더보기
+    @GET("/user/mypage/product")
+    suspend fun getMyPageProductDetail(
+        @Query("user_id") userId: String
+    ): Call<MyPageProductDetailResponse>
+
+    // 마이페이지 나의 업체 이용 더보기
+    @GET("/user/mypage/company")
+    suspend fun getMyPageCompanyDetail(
+        @Query("user_id") userId: String
+    ): Call<MyPageReservationDetailResponse>
 }
