@@ -12,6 +12,7 @@ class UserRepositoryImpl(
 
     override suspend fun registerUser() {
         //todo userApi 의 회원가입 함수 호출
+        return signUpUser;
     }
 
     override suspend fun processLogIn() {
