@@ -15,13 +15,17 @@ interface UserApi {
     @FormUrlEncoded
     @POST("/user/signin")
     suspend fun signInUser(
-        @Field("user_id") userId: String,
+        @Field("id") userId: String,
         @Field("password") password: String
     ): Call<UserResponse>
 
     // 회원탈퇴
+    @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")
+    @FormUrlEncoded
     @DELETE("/user")
-    suspend fun removeUser()
+    suspend fun removeUser(
+        @Field("id") userId: String
+    )
 
     // 마이페이지 메인 정보 조회
     @GET("/user/mypage")

@@ -37,7 +37,7 @@ data class ReservationCheck(
     val extraMessage: String? = null,
 
     @SerializedName("process_state")
-    val processState: Int? = null,
+    val processState: Int? = 1,
 
     @SerializedName("reserve_date_time")
     val reserveDateTime: String? = null,
