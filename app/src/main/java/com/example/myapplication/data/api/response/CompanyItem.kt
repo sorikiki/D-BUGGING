@@ -27,7 +27,7 @@ data class CompanyItem(
     @SerializedName("available_counsel_time")
     val availableCounselTime: String? = null,
 
-    @SerializedName("thumb_nail")
+    @SerializedName("thumbnail")
     val thumbNail: String? = null,
 
     @SerializedName("is_company_interested")

@@ -6,6 +6,6 @@ class LoginPresenter(
     private val userRepository: UserRepository,
     private val view: LoginActivity
 )   {
-
+//LoginActivity, LoginPresenter, LoginContract
 
 }

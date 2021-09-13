@@ -2,7 +2,7 @@ package com.example.myapplication.data.api.response
 
 import com.google.gson.annotations.SerializedName
 
-data class ReservationDetailResponse(
+data class BugListResponse(
     @SerializedName("message")
     val message: String? = null,
 
@@ -13,5 +13,6 @@ data class ReservationDetailResponse(
     val success: Boolean? = null,
 
     @SerializedName("data")
-    val reservationDetail: ReservationDetail? = null
+    val bugList: List<BugItem>? = null
 )
+
