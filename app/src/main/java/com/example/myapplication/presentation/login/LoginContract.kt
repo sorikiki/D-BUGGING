@@ -5,10 +5,18 @@ import com.example.myapplication.presentation.BaseView
 
 interface LoginContract {
     interface View : BaseView<Presenter> {
-        fun getUserInput(): Pair<String, String>
+        fun getUserInput()
+
+        fun processLoginSuccess()
+
+        fun processLoginFail()
+
+        fun showLoadingIndicator()
+
+        fun hideLoadingIndicator()
     }
 
     interface Presenter : BasePresenter {
-        suspend fun signInUser()
+        fun signInUser(id: String, password: String)
     }
 }

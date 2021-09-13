@@ -5,7 +5,7 @@ import com.example.myapplication.data.api.UserInfo
 interface UserRepository {
     suspend fun registerUser(userInfo: UserInfo);
 
-    suspend fun processLogIn(id : String, password : String)
+    suspend fun processLogIn(id : String, password : String): Boolean
 
     suspend fun clearUser(id : String)
 }

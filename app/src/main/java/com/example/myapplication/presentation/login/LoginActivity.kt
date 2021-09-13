@@ -2,20 +2,33 @@ package com.example.myapplication.presentation.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.ProgressBar
+import android.widget.Toast
 import com.example.myapplication.R
+import com.example.myapplication.presentation.home.HomeActivity
 import com.example.myapplication.presentation.register.RegisterActivity
-import org.koin.android.ext.android.inject
 
-class LoginActivity: AppCompatActivity(), LoginContract.View {
+import org.koin.android.scope.ScopeActivity
+
+class LoginActivity: ScopeActivity(), LoginContract.View {
 
     override val presenter: LoginContract.Presenter by inject()
+
+    private val progressBar by lazy {
+        findViewById<ProgressBar>(R.id.progress_bar)
+    }
+
+    private val logInContainer by lazy {
+        findViewById<View>(R.id.login_container)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        presenter.onViewCreated()
 
         bindViews()
     }
@@ -30,19 +43,38 @@ class LoginActivity: AppCompatActivity(), LoginContract.View {
         registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 
-    override fun getUserInput(): Pair<String, String> {
+    override fun getUserInput() {
         val id = findViewById<EditText>(R.id.login_id).text.toString()
         val password = findViewById<EditText>(R.id.login_pw).text.toString()
 
-        return Pair(id, password);
+        presenter.signInUser(id, password)
     }
 
+    override fun processLoginSuccess() {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 
+    override fun processLoginFail() {
+        Toast.makeText(this, "로그인에 실패하였습니다.",Toast.LENGTH_SHORT).show()
+    }
 
+    override fun showLoadingIndicator() {
+        progressBar.visibility = View.VISIBLE
+        logInContainer.visibility = View.GONE
+    }
 
+    override fun hideLoadingIndicator() {
+        progressBar.visibility = View.GONE
+        logInContainer.visibility = View.VISIBLE
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroyView()
+    }
 }

@@ -17,38 +17,36 @@ class UserRepositoryImpl(
     private val userApi: UserApi,
     private val preferenceManager: PreferenceManager,
     private val dispatcher: CoroutineDispatcher
-): UserRepository {
+) : UserRepository {
 
     override suspend fun registerUser(userInfo: UserInfo) {
         //todo userApi 의 회원가입 함수 호출
         userApi.signUpUser(userInfo);
     }
 
-    override suspend fun processLogIn(id: String, password : String) {
-        //todo userApi 의 로그인 함수 호출 & 아이디와 유저이름 sharedPreference 에
+    override suspend fun processLogIn(id: String, password: String): Boolean {
+        var loginSucceed = false
+
         userApi.signInUser(id, password)
-            .enqueue(object: Callback<UserResponse> {
-                override fun onResponse(
-                    call: Call<UserResponse>,
-                    response: Response<UserResponse>
-                ) {
-                    val currentUserId = response.body()?.currentUser?.userId
-                    val currentUserName = response.body()?.currentUser?.userName
+            .execute()
+            .body()
+            .also { response ->
+                if (response != null) {
+                    val currentUserId = response.currentUser?.userId
+                    val currentUserName = response.currentUser?.userName
 
                     if (currentUserId != null) {
                         if (currentUserName != null) {
                             preferenceManager.putUserInfo(currentUserId, currentUserName)
                         }
                     }
+
+                    loginSucceed = response.success ?: false
                 }
-
-                override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-            })
-
+            }
+        return loginSucceed
     }
+
 
     override suspend fun clearUser(id: String) {
         //todo userApi 의 회원탈퇴 함수 호출
