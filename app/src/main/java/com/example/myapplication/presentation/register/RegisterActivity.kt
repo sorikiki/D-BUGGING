@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication.R
 
 class RegisterActivity: AppCompatActivity() {
@@ -19,15 +21,14 @@ class RegisterActivity: AppCompatActivity() {
         initViews()
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navigationController.navigateUp() || super.onSupportNavigateUp()
-    }
-
-
     private fun initViews() {
         val toolBar = findViewById<Toolbar>(R.id.tool_bar)
-        setSupportActionBar(toolBar)
-        setupActionBarWithNavController(navigationController)
+        val appBarConfiguration = AppBarConfiguration(
+            topLevelDestinationIds = setOf(),
+            fallbackOnNavigateUpListener = ::onSupportNavigateUp
+        )
+
+        toolBar.setupWithNavController(navigationController, appBarConfiguration)
     }
 
 }

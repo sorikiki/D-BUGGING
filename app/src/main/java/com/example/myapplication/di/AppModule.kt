@@ -1,12 +1,16 @@
 package com.example.myapplication.di
 
 import android.app.Activity
+import android.util.Log
 import com.example.myapplication.BuildConfig
 import com.example.myapplication.data.api.CompanyApi
 import com.example.myapplication.data.api.Url.BASE_URL
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.preference.PreferenceManager
 import com.example.myapplication.data.preference.SharedPreferenceManager
+import com.example.myapplication.presentation.login.LoginActivity
+import com.example.myapplication.presentation.login.LoginContract
+import com.example.myapplication.presentation.login.LoginPresenter
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -48,14 +52,10 @@ val appModule = module {
             .create()
     }
 
-    
-    /*single<CompanyApi> {
-
-
-            .client(get())
-            .build()
-            .create()
-    }*/
+    // Presentation
+    scope<LoginActivity> {
+        scoped<LoginContract.Presenter> { LoginPresenter(get(), getSource()) }
+    }
 
 
 

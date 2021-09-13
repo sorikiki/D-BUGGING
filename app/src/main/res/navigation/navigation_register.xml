@@ -7,12 +7,14 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.myapplication.presentation.register.RegisterFragment">
+        android:name="com.example.myapplication.presentation.register.RegisterFragment"
+        android:label="회원가입">
         <action
             android:id="@+id/action_registerFragment_to_registerFragmentCompleted"
             app:destination="@id/registerFragmentCompleted" />
     </fragment>
     <fragment
         android:id="@+id/registerFragmentCompleted"
-        android:name="com.example.myapplication.presentation.register.RegisterFragmentCompleted" />
+        android:name="com.example.myapplication.presentation.register.RegisterFragmentCompleted"
+        android:label="@string/main_title" />
 </navigation>

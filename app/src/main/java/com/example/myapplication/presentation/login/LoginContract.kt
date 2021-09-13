@@ -5,11 +5,10 @@ import com.example.myapplication.presentation.BaseView
 
 interface LoginContract {
     interface View : BaseView<Presenter> {
-
-
+        fun getUserInput(): Pair<String, String>
     }
 
     interface Presenter : BasePresenter {
-
+        suspend fun signInUser()
     }
 }
