@@ -1,31 +1,53 @@
 package com.example.myapplication.data.api
 
-import com.example.myapplication.data.api.UserApi.Companion.USER_ENDPOINT
-import com.example.myapplication.data.api.response.UserResponse
+import com.example.myapplication.data.api.response.*
 import retrofit2.Call
 import retrofit2.http.*
 
 interface UserApi {
     // 회원가입
     @Headers("accept: application/json", "content-type: application/json")
-    @POST(USER_ENDPOINT)
-    suspend fun signUpUser(@Body userInfo: UserInfo): Call<UserResponse>
+    @POST("/user/signup")
+    suspend fun signUpUser(@Body userInfo: UserInfo)
 
     // 로그인
-    @GET(USER_ENDPOINT)
+    @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")
+    @FormUrlEncoded
+    @POST("/user/signin")
     suspend fun signInUser(
-        @Query("id") id: String,
-        @Query("password") password: String
+        @Field("id") id: String,
+        @Field("password") password: String
     ): Call<UserResponse>
 
     // 회원탈퇴
-    @DELETE(USER_ENDPOINT)
-    suspend fun deleteUser(
-        @Query("id") id: String,
-        @Query("password") password: String
-    ): Call<UserResponse>
+    @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")
+    @FormUrlEncoded
+    @DELETE("/user")
+    suspend fun removeUser(
+        @Field("id") id: String
+    )
 
-    companion object {
-        const val USER_ENDPOINT = "/users"
-    }
+    // 마이페이지 메인 정보 조회
+    @GET("/user/mypage")
+    suspend fun getMyPageInformation(
+        @Query("user_id") id: String
+    ): Call<UserDetailResponse>
+
+    // 마이페이지 나의 설문 더보기
+    @GET("/user/mypage/survey")
+    suspend fun getMyPageSurveyDetail(
+        @Query("user_id") id: String
+    ): Call<MyPageSurveyDetailResponse>
+
+    // 마이페이지 찜한 퇴치법 더보기
+    @GET("/user/mypage/product")
+    suspend fun getMyPageProductDetail(
+        @Query("user_id") id: String
+    ): Call<MyPageProductDetailResponse>
+
+    // 마이페이지 나의 업체 이용 더보기
+    @GET("/user/mypage/company")
+    suspend fun getMyPageCompanyDetail(
+        @Query("user_id") id: String
+    ): Call<MyPageReservationDetailResponse>
 }
