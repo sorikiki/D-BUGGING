@@ -1,5 +1,6 @@
 package com.example.myapplication.presentation.login
 
+import com.example.myapplication.data.api.UserInfo
 import com.example.myapplication.presentation.BasePresenter
 import com.example.myapplication.presentation.BaseView
 
@@ -17,6 +18,8 @@ interface LoginContract {
     }
 
     interface Presenter : BasePresenter {
+        fun signUpUser()
+
         fun signInUser(id: String, password: String)
     }
 }
