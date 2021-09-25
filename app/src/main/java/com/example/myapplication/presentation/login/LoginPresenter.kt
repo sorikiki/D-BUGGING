@@ -1,5 +1,6 @@
 package com.example.myapplication.presentation.login
 
+import com.example.myapplication.data.api.UserInfo
 import com.example.myapplication.data.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
@@ -16,6 +17,10 @@ class LoginPresenter(
 
     override fun onDestroyView() {}
 
+    override fun signUpUser(){
+        view.getUserInput();
+    }
+
     override fun signInUser(id: String, password: String) {
 
         scope.launch {
@@ -31,4 +36,5 @@ class LoginPresenter(
             }
         }
     }
+
 }
