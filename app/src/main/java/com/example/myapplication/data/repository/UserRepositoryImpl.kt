@@ -1,5 +1,6 @@
 package com.example.myapplication.data.repository
 
+import android.util.Log
 import android.view.KeyEvent
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.api.UserInfo
@@ -28,9 +29,9 @@ class UserRepositoryImpl(
         var loginSucceed = false
 
         userApi.signInUser(id, password)
-            .execute()
             .body()
             .also { response ->
+                Log.d("response", response.toString())
                 if (response != null) {
                     val currentUserId = response.currentUser?.userId
                     val currentUserName = response.currentUser?.userName

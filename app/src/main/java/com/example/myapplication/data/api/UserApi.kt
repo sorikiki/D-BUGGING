@@ -2,6 +2,7 @@ package com.example.myapplication.data.api
 
 import com.example.myapplication.data.api.response.*
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.*
 
 interface UserApi {
@@ -17,7 +18,7 @@ interface UserApi {
     suspend fun signInUser(
         @Field("id") id: String,
         @Field("password") password: String
-    ): Call<UserResponse>
+    ): Response<UserResponse>
 
     // 회원탈퇴
     @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")
