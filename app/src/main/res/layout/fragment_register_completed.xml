@@ -26,14 +26,14 @@
         android:text="회원가입이 완료 되었습니다."
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_register_completed"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon" />
 
     <Button
-        android:id="@+id/btn_register_completed"
+        android:id="@+id/btn_login"
         android:layout_width="339dp"
         android:layout_height="56dp"
         android:layout_marginBottom="300dp"

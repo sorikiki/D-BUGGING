@@ -18,8 +18,6 @@ interface LoginContract {
     }
 
     interface Presenter : BasePresenter {
-        fun signUpUser()
-
         fun signInUser(id: String, password: String)
     }
 }

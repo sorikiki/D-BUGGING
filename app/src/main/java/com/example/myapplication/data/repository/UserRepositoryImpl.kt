@@ -22,7 +22,7 @@ class UserRepositoryImpl(
 
     override suspend fun registerUser(userInfo: UserInfo) {
         //todo userApi 의 회원가입 함수 호출
-        userApi.signUpUser(userInfo);
+        userApi.signUpUser(userInfo)
     }
 
     override suspend fun processLogIn(id: String, password: String): Boolean {

@@ -17,10 +17,6 @@ class LoginPresenter(
 
     override fun onDestroyView() {}
 
-    override fun signUpUser(){
-        view.getUserInput();
-    }
-
     override fun signInUser(id: String, password: String) {
 
         scope.launch {
