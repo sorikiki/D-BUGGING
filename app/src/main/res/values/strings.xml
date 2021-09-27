@@ -11,4 +11,9 @@
     <string name="post_address">우편번호</string>
     <string name="address">도로명 주소</string>
     <string name="detail_address">상세 주소</string>
+    <string name="my_page">마이페이지</string>
+    <string name="bug_survey">해충 식별 설문</string>
+    <string name="company_connection">전문 업체 연결</string>
+    <string name="self_kill_explanation">셀프 퇴치 설명서</string>
+    <string name="chosen_bug_by_companies_top3">방역 업체 선정 해충 TOP3</string>
 </resources>
