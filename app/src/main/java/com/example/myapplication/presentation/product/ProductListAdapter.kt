@@ -68,7 +68,7 @@ class ProductListAdapter internal constructor(list: ArrayList<ProductListItem>?)
             thumb = itemView.findViewById(R.id.iv_product_thumb)
             name = itemView.findViewById(R.id.tv_product_title)
             intro = itemView.findViewById(R.id.tv_product_intro)
-
+//
             //아이템 클릭이벤트처리
             itemView.setOnClickListener { v ->
                 val position = adapterPosition
