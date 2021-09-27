@@ -30,7 +30,7 @@
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="패스워드"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:paddingStart="20dp"
             android:paddingTop="10dp"
             android:paddingEnd="10dp"

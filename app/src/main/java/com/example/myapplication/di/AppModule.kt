@@ -13,10 +13,12 @@ import com.example.myapplication.data.repository.UserRepositoryImpl
 import com.example.myapplication.presentation.login.LoginActivity
 import com.example.myapplication.presentation.login.LoginContract
 import com.example.myapplication.presentation.login.LoginPresenter
+import com.example.myapplication.presentation.register.*
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.fragment.dsl.fragment
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -65,6 +67,8 @@ val appModule = module {
         scoped<LoginContract.Presenter> { LoginPresenter(get(), getSource()) }
     }
 
-
+    scope<RegisterFragment> {
+        scoped<RegisterContract.Presenter> { RegisterPresenter(get(), getSource()) }
+    }
 
 }

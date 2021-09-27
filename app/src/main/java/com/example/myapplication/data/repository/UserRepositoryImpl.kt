@@ -1,5 +1,6 @@
 package com.example.myapplication.data.repository
 
+import android.util.Log
 import android.view.KeyEvent
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.api.UserInfo
@@ -21,16 +22,16 @@ class UserRepositoryImpl(
 
     override suspend fun registerUser(userInfo: UserInfo) {
         //todo userApi 의 회원가입 함수 호출
-        userApi.signUpUser(userInfo);
+        userApi.signUpUser(userInfo)
     }
 
     override suspend fun processLogIn(id: String, password: String): Boolean {
         var loginSucceed = false
 
         userApi.signInUser(id, password)
-            .execute()
             .body()
             .also { response ->
+                Log.d("response", response.toString())
                 if (response != null) {
                     val currentUserId = response.currentUser?.userId
                     val currentUserName = response.currentUser?.userName
