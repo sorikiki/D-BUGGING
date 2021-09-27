@@ -14,20 +14,38 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity
+<<<<<<< HEAD
             android:name=".presentation.login.LoginActivity">
+=======
+            android:name=".presentation.login.LoginActivity"
+            android:exported="true">
+>>>>>>> 95a04f68708cc25dc54bc9e53b3521df59376503
 
         </activity>
         <activity android:name=".presentation.register.RegisterActivity" />
         <activity android:name=".presentation.home.HomeActivity">
+<<<<<<< HEAD
+=======
+
+        </activity>
+        <activity android:name=".presentation.company.CompanyActivity">
+
+        </activity>
+        <activity android:name=".presentation.mypage.MyPageActivity" />
+        <activity android:name=".presentation.product.ProductActivity">
+>>>>>>> 95a04f68708cc25dc54bc9e53b3521df59376503
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".presentation.company.CompanyActivity" />
         <activity android:name=".presentation.mypage.MyPageActivity" />
         <activity android:name=".presentation.product.ProductActivity" />
+=======
+>>>>>>> 95a04f68708cc25dc54bc9e53b3521df59376503
         <activity android:name=".presentation.survey.SurveyActivity" />
         <activity android:name=".presentation.bug.BugActivity" />
     </application>

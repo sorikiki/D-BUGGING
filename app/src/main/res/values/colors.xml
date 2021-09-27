@@ -12,11 +12,18 @@
     <!--    custom grey    -->
     <color name="dark_grey">#333333</color>
     <color name="light_grey">#f0f0f0</color>
+    <color name="greyish_brown">#404040</color>
 
     <!--    custom orange   -->
     <color name="orange">#ffc74f</color>
     <color name="deeper_orange">#ffbb00</color>
     <!--    custom green    -->
+<<<<<<< HEAD
     <color name="green">#00e676</color>
     <color name="dark_green">#52c881</color>
+=======
+    <color name="green">#2AD14E</color>
+    <color name="dark_green">#578324</color>
+    <color name="turquoise_green">#00e676</color>
+>>>>>>> 95a04f68708cc25dc54bc9e53b3521df59376503
 </resources>

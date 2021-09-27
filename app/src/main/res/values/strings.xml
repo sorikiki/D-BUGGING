@@ -11,9 +11,26 @@
     <string name="post_address">우편번호</string>
     <string name="address">도로명 주소</string>
     <string name="detail_address">상세 주소</string>
+<<<<<<< HEAD
     <string name="my_page">마이페이지</string>
     <string name="bug_survey">해충 식별 설문</string>
     <string name="company_connection">전문 업체 연결</string>
     <string name="self_kill_explanation">셀프 퇴치 설명서</string>
     <string name="chosen_bug_by_companies_top3">방역 업체 선정 해충 TOP3</string>
+=======
+    <string name="d_bugging">:D-BUGGING</string>
+    <string name="company_title">전문 업체 연결</string>
+    <string name="company_intro">벌레 퇴치 전문가와 상담해보세요</string>
+    <string name="filter_icon_desc">filter icon</string>
+    <string name="filter_near">#가까운 순</string>
+    <string name="filter_popular">#인기순</string>
+    <string name="filter_review">#리뷰 많은 순</string>
+    <string name="filter_grade">#평점 높은 순</string>
+    <string name="filter_response">#빠른 응답순</string>
+    <string name="filter_alphabetical">#가나다 순</string>
+    <string name="filter_bookmark">#찜 많은 순</string>
+    <string name="company_list_title">내 주변에 있는 업체</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+>>>>>>> 95a04f68708cc25dc54bc9e53b3521df59376503
 </resources>
