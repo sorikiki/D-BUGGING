@@ -67,7 +67,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="68dp"
-            android:background="@drawable/btn_bg"
+            android:background="@drawable/circle_bg"
             android:text="@string/sign_in_string"
             app:backgroundTint="@android:color/holo_green_dark"
             app:layout_constraintEnd_toEndOf="@+id/login_pw"

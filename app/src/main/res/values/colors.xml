@@ -11,11 +11,13 @@
 
     <!--    custom grey    -->
     <color name="dark_grey">#333333</color>
+    <color name="medium_grey">#707070</color>
     <color name="light_grey">#f0f0f0</color>
 
     <!--    custom orange   -->
-    <color name="orange">#ffc74f</color>
-    <color name="deeper_orange">#ffbb00</color>
+    <color name="orange">#ffc303</color>
+    <color name="deeper_orange">#ffc400</color>
+
     <!--    custom green    -->
     <color name="green">#00e676</color>
     <color name="dark_green">#52c881</color>

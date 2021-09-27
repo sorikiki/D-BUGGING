@@ -83,7 +83,7 @@
                     android:layout_gravity="right"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/btn_bg"
+                    android:background="@drawable/circle_bg"
                     android:text="중복 확인"
                     android:textColor="@color/white"
                     app:backgroundTint="@android:color/holo_green_dark" />
@@ -184,7 +184,7 @@
                     android:layout_gravity="right"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/btn_bg"
+                    android:background="@drawable/circle_bg"
                     android:text="인증번호 전송"
                     android:textColor="@color/white"
                     app:backgroundTint="@android:color/holo_green_dark" />
@@ -221,7 +221,7 @@
                     android:layout_width="125dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/btn_bg"
+                    android:background="@drawable/circle_bg"
                     android:text="인증하기"
                     android:textColor="@color/white"
                     android:layout_gravity="right"
@@ -298,7 +298,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/btn_bg"
+                    android:background="@drawable/circle_bg"
                     android:text="우편번호 검색"
                     android:textColor="@color/white"
                     app:backgroundTint="@android:color/holo_green_dark" />
@@ -399,7 +399,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/btn_bg"
+                android:background="@drawable/circle_bg"
                 android:text="전혀 없음"
                 android:textColor="@color/white"
                 app:backgroundTint="@android:color/holo_green_dark" />
@@ -409,7 +409,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/btn_bg"
+                android:background="@drawable/circle_bg"
                 android:text="필요시 종종 이용함"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/grey" />
@@ -419,7 +419,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/btn_bg"
+                android:background="@drawable/circle_bg"
                 android:text="건물 정기 소독만 이용"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/grey" />
@@ -429,7 +429,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
-                android:background="@drawable/btn_bg"
+                android:background="@drawable/circle_bg"
                 android:text="단골 업체 없음"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/grey" />
@@ -534,7 +534,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
-                android:background="@drawable/btn_bg"
+                android:background="@drawable/circle_bg"
                 android:text="@string/register_completed"
                 android:textColor="@color/white"
                 app:backgroundTint="@android:color/holo_green_dark" />

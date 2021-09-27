@@ -16,4 +16,5 @@
     <string name="company_connection">전문 업체 연결</string>
     <string name="self_kill_explanation">셀프 퇴치 설명서</string>
     <string name="chosen_bug_by_companies_top3">방역 업체 선정 해충 TOP3</string>
+    <string name="bug_explanation">벌레 도감</string>
 </resources>
