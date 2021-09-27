@@ -19,7 +19,7 @@ class CompanyListFragment: Fragment() {
     var companyItems: ArrayList<CompanyListItem> = ArrayList<CompanyListItem>()
 
     private var binding: FragmentCompanyListBinding? = null
-
+//
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
