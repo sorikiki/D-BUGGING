@@ -1,6 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_company_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/company_title"
+        android:textColor="@color/greyish_brown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_company_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/company_intro"
+        android:textColor="@color/greyish_brown"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_company_title" />
+
+    <ImageView
+        android:id="@+id/iv_filter"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_filter"
+        android:padding="4dp"
+        android:src="@drawable/ic_sliders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_company_intro"
+        android:contentDescription="@string/filter_icon_desc" />
+
+    <TextView
+        android:id="@+id/tv_filter_near"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_filter"
+        android:padding="4dp"
+        android:text="@string/filter_near"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_filter"
+        app:layout_constraintTop_toBottomOf="@+id/tv_company_intro"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_filter_popular"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_filter"
+        android:padding="4dp"
+        android:text="@string/filter_popular"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_filter_near"
+        app:layout_constraintTop_toBottomOf="@+id/tv_company_intro"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_filter_review"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_filter"
+        android:padding="4dp"
+        android:text="@string/filter_review"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_filter_popular"
+        app:layout_constraintTop_toBottomOf="@+id/tv_company_intro"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_filter_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_filter"
+        android:padding="4dp"
+        android:text="@string/filter_grade"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_filter_review"
+        app:layout_constraintTop_toBottomOf="@+id/tv_company_intro"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_filter_response"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_filter"
+        android:padding="4dp"
+        android:text="@string/filter_response"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_filter"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_filter_alphabetical"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_filter"
+        android:padding="4dp"
+        android:text="@string/filter_alphabetical"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_filter_response"
+        app:layout_constraintTop_toBottomOf="@+id/iv_filter"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_filter_bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_filter"
+        android:padding="4dp"
+        android:text="@string/filter_bookmark"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_filter_alphabetical"
+        app:layout_constraintTop_toBottomOf="@+id/iv_filter"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_company_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="51dp"
+        android:text="@string/company_list_title"
+        android:textColor="@color/greyish_brown"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_filter_response" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_company_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_company_list_title" />
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_register.xml" value="0.1" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/drawable/bg_filter.xml" value="0.536" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/activity_company.xml" value="0.1" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/activity_login.xml" value="0.12284701114488349" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/activity_mypage.xml" value="0.12284701114488349" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/activity_product.xml" value="0.12284701114488349" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/activity_survey.xml" value="0.12284701114488349" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/fragment_company_item.xml" value="0.1526268115942029" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/fragment_company_list.xml" value="0.11929824561403508" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/fragment_product_list.xml" value="0.4" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/fragment_product_list_category.xml" value="0.536" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/fragment_register.xml" value="0.13405797101449277" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/item_company_list.xml" value="0.5442307692307692" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/layout/item_product_list.xml" value="0.264" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING/app/src/main/res/menu/toolbar_menu.xml" value="0.264" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg2.xml" value="0.13796296296296295" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_email.xml" value="0.14114583333333333" />
@@ -16,35 +31,9 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_login.xml" value="0.18857142857142858" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_mypage.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_product.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_register.xml" value="0.10285714285714286" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_survey.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/company_item.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_item.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_item.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_check.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_completed.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_home.xml" value="0.145985401459854" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_detail_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_item.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_main.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_product_interest_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_survey_detail_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_item.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_register.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_register_completed.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_signin.xml" value="0.3828571428571429" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_signup.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_result.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_start.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_item_view.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_question_view.xml" value="0.125" />
       </map>
     </option>
   </component>

@@ -12,6 +12,7 @@
     <!--    custom grey    -->
     <color name="dark_grey">#333333</color>
     <color name="light_grey">#f0f0f0</color>
+    <color name="greyish_brown">#404040</color>
 
     <!--    custom orange   -->
     <color name="orange">#ffc74f</color>
@@ -19,4 +20,5 @@
     <!--    custom green    -->
     <color name="green">#2AD14E</color>
     <color name="dark_green">#578324</color>
+    <color name="turquoise_green">#00e676</color>
 </resources>
