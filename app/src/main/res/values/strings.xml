@@ -17,4 +17,7 @@
     <string name="self_kill_explanation">셀프 퇴치 설명서</string>
     <string name="chosen_bug_by_companies_top3">방역 업체 선정 해충 TOP3</string>
     <string name="bug_explanation">벌레 도감</string>
+    <string name="log_out">로그아웃</string>
+    <string name="sign_out">회원탈퇴</string>
+    <string name="divider">|</string>
 </resources>

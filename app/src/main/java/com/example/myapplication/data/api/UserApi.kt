@@ -23,7 +23,7 @@ interface UserApi {
     // 회원탈퇴
     @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")
     @FormUrlEncoded
-    @DELETE("/user")
+    @POST("/user/removal")
     suspend fun removeUser(
         @Field("id") id: String
     )

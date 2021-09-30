@@ -8,4 +8,10 @@ interface UserRepository {
     suspend fun processLogIn(id : String, password : String): Boolean
 
     suspend fun clearUser(id : String)
+
+    fun getCurrentUserId(): String?
+
+    fun getCurrentUserName(): String?
+
+    fun logOutUser()
 }

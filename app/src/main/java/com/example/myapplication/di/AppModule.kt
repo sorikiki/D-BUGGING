@@ -10,6 +10,9 @@ import com.example.myapplication.data.preference.PreferenceManager
 import com.example.myapplication.data.preference.SharedPreferenceManager
 import com.example.myapplication.data.repository.UserRepository
 import com.example.myapplication.data.repository.UserRepositoryImpl
+import com.example.myapplication.presentation.home.HomeActivity
+import com.example.myapplication.presentation.home.HomeContract
+import com.example.myapplication.presentation.home.HomePresenter
 import com.example.myapplication.presentation.login.LoginActivity
 import com.example.myapplication.presentation.login.LoginContract
 import com.example.myapplication.presentation.login.LoginPresenter
@@ -69,6 +72,10 @@ val appModule = module {
 
     scope<RegisterFragment> {
         scoped<RegisterContract.Presenter> { RegisterPresenter(get(), getSource()) }
+    }
+
+    scope<HomeActivity> {
+        scoped<HomeContract.Presenter> { HomePresenter(get(), getSource())}
     }
 
 }
