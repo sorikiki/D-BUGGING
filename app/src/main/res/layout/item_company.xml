@@ -25,8 +25,8 @@
         android:layout_marginTop="23dp"
         android:layout_marginStart="12dp"
         android:text="해충 마스터"
-        android:textColor="@color/greyish_brown"
-        android:textSize="12sp"
+        android:textColor="@color/dark_grey"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/iv_company_thumb"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,8 +49,8 @@
         android:layout_marginEnd="12sp"
         android:lineSpacingExtra="12sp"
         android:textAlignment="viewStart"
-        android:textColor="@color/greyish_brown"
-        android:textSize="12sp"
+        android:textColor="@color/grey"
+        android:textSize="14sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.306"
@@ -59,6 +59,7 @@
         tools:text="바퀴벌레, 좀벌레 등 해충 방역 전문." />
 
     <ImageButton
+        android:id="@+id/ib_interest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_heart_line"

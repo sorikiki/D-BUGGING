@@ -14,12 +14,9 @@ import com.example.myapplication.databinding.FragmentCompanyListBinding
 import java.util.ArrayList
 
 class CompanyListFragment: Fragment() {
-    lateinit var companyRecyclerView: RecyclerView
-    lateinit var companyAdapter: CompanyListAdapter
-    var companyItems: ArrayList<CompanyListItem> = ArrayList<CompanyListItem>()
 
     private var binding: FragmentCompanyListBinding? = null
-//
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,25 +25,20 @@ class CompanyListFragment: Fragment() {
     ): View = FragmentCompanyListBinding.inflate(inflater, container, false)
         .also {
             binding = it
-            companyRecyclerView= binding!!.rvCompanyList
-            //리사이클러뷰에 adapter 객체 지정
-            companyAdapter = CompanyListAdapter(companyItems)
-            companyRecyclerView.setAdapter(companyAdapter)
-            var layoutManager = LinearLayoutManager(context) // 리사이클러뷰 그리드 레이아웃
-            companyRecyclerView.setLayoutManager(layoutManager)
         }
         .root
 
-    fun addItem(name:String, grade: Double, intro:String) {
-        val item = CompanyListItem(name, grade, intro)
-        item.setName(name)
-        item.setGrade(grade)
-        item.setIntro(intro)
-        companyItems.add(item)
-    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initViews()
+    }
+
+    private fun initViews() {
+        binding?.rvCompanyList?.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = CompanyListAdapter()
+        }
     }
 
     override fun onDestroyView() {

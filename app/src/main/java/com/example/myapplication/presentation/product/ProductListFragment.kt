@@ -1,6 +1,5 @@
 package com.example.myapplication.presentation.product
 
-import CompanyListAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.FragmentProductListBinding
-import com.example.myapplication.presentation.company.CompanyListItem
 import java.util.ArrayList
 
 class ProductListFragment: Fragment() {
