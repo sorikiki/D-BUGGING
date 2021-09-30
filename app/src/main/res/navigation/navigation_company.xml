@@ -6,40 +6,35 @@
 
     <fragment
         android:id="@+id/companyListFragment"
-        android:name="com.example.myapplication.presentation.company.CompanyListFragment"
-        android:label="CompanyListFragment" >
+        android:name="com.example.myapplication.presentation.company.CompanyListFragment">
         <action
             android:id="@+id/action_companyListFragment_to_companyItemFragment"
             app:destination="@id/companyItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/companyItemFragment"
-        android:name="com.example.myapplication.presentation.company.CompanyItemFragment"
-        android:label="CompanyItemFragment" >
+        android:name="com.example.myapplication.presentation.company.CompanyItemFragment">
         <action
             android:id="@+id/action_companyItemFragment_to_companyReservationFragment"
             app:destination="@id/companyReservationFragment" />
     </fragment>
     <fragment
         android:id="@+id/companyReservationFragment"
-        android:name="com.example.myapplication.presentation.company.CompanyReservationFragment"
-        android:label="CompanyReservationFragment" >
+        android:name="com.example.myapplication.presentation.company.CompanyReservationFragment">
         <action
             android:id="@+id/action_companyReservationFragment_to_companyReservationCheckFragment"
             app:destination="@id/companyReservationCheckFragment" />
     </fragment>
     <fragment
         android:id="@+id/companyReservationCheckFragment"
-        android:name="com.example.myapplication.presentation.company.CompanyReservationCheckFragment"
-        android:label="CompanyReservationCheckFragment" >
+        android:name="com.example.myapplication.presentation.company.CompanyReservationCheckFragment">
         <action
             android:id="@+id/action_companyReservationCheckFragment_to_companyReservationCompletedFragment"
             app:destination="@id/companyReservationCompletedFragment" />
     </fragment>
     <fragment
         android:id="@+id/companyReservationCompletedFragment"
-        android:name="com.example.myapplication.presentation.company.CompanyReservationCompletedFragment"
-        android:label="CompanyReservationCompletedFragment" >
+        android:name="com.example.myapplication.presentation.company.CompanyReservationCompletedFragment">
         <action
             android:id="@+id/action_companyReservationCompletedFragment_to_companyItemFragment"
             app:destination="@id/companyItemFragment" />
