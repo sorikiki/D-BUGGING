@@ -1,5 +1,9 @@
 package com.example.myapplication.domain
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class CompanyInformation (
     val companyId: Int? = null,
     val companyName: String? = null,
@@ -11,4 +15,4 @@ data class CompanyInformation (
     val availableCounselTime: String? = null,
     val thumbNail: String? = null,
     val isCompanyInterested: Boolean? = false
-)
+) : Parcelable

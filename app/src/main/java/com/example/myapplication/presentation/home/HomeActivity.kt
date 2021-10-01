@@ -1,31 +1,25 @@
 package com.example.myapplication.presentation.home
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
-import android.view.View
+import android.view.*
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
-import androidx.core.view.marginTop
-import androidx.core.view.size
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication.R
-import com.example.myapplication.data.repository.UserRepositoryImpl
+import com.example.myapplication.presentation.bug.BugActivity
+import com.example.myapplication.presentation.company.CompanyActivity
 import com.example.myapplication.presentation.login.LoginActivity
+import com.example.myapplication.presentation.mypage.MyPageActivity
+import com.example.myapplication.presentation.product.ProductActivity
+import com.example.myapplication.presentation.survey.SurveyActivity
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.theme.overlay.MaterialThemeOverlay
-import org.koin.android.ext.android.inject
 import org.koin.android.scope.ScopeActivity
 
 class HomeActivity : ScopeActivity(), HomeContract.View {
@@ -74,6 +68,7 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
 
     }
 
+
     private fun bindViews(currentUserId: String) {
         findViewById<TextView>(R.id.tv_log_out).setOnClickListener {
             navigationDrawer.visibility = View.INVISIBLE
@@ -93,6 +88,16 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
             // todo 회원탈퇴
             presenter.clearUser(currentUserId)
             presenter.logOutUser()
+        }
+
+        navigationDrawer.setNavigationItemSelectedListener { menu ->
+            when (menu.itemId) {
+                R.id.companyActivity -> {
+                    val intent = Intent(this, CompanyActivity::class.java)
+                    startActivity(intent)
+                    true
+                } else -> true
+            }
         }
     }
 

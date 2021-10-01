@@ -26,15 +26,13 @@ class CompanyListPresenter(
             if (companyItems == null) {
                 view.showErrorMessage()
             } else {
-                view.showCompanyItems(companyItems!!)
                 view.hideLoadingIndicator()
+                view.showCompanyItems(companyItems!!)
             }
         }
     }
 
-
     override fun onDestroyView() {
         TODO("Not yet implemented")
     }
-
 }
