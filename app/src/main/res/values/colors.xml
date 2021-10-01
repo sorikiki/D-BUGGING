@@ -11,7 +11,8 @@
 
     <!--    custom grey    -->
     <color name="dark_grey">#333333</color>
-    <color name="light_grey">#f0f0f0</color>
+    <color name="light_grey">#E9E9E9</color>
+    <color name="medium_grey">#707070</color>
     <color name="greyish_brown">#404040</color>
 
     <!--    custom orange   -->

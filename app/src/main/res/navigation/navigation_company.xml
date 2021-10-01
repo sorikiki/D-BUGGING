@@ -10,6 +10,9 @@
         <action
             android:id="@+id/action_companyListFragment_to_companyItemFragment"
             app:destination="@id/companyItemFragment" />
+        <argument
+            android:name="CompanyInformation"
+            app:argType="com.example.myapplication.domain.CompanyInformation" />
     </fragment>
     <fragment
         android:id="@+id/companyItemFragment"

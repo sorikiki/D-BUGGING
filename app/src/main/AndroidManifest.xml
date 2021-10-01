@@ -14,17 +14,22 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity android:name=".presentation.login.LoginActivity">
+
+        </activity>
+        <activity android:name=".presentation.register.RegisterActivity">
+
+        </activity>
+        <activity android:name=".presentation.home.HomeActivity">
+
+        </activity>
+        <activity android:name=".presentation.company.CompanyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".presentation.register.RegisterActivity" />
-        <activity android:name=".presentation.home.HomeActivity">
 
         </activity>
-        <activity android:name=".presentation.company.CompanyActivity" />
         <activity android:name=".presentation.mypage.MyPageActivity" />
         <activity android:name=".presentation.product.ProductActivity" />
         <activity android:name=".presentation.survey.SurveyActivity" />

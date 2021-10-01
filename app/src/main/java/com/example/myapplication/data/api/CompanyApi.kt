@@ -5,12 +5,13 @@ import com.example.myapplication.data.api.response.CompanyListResponse
 import com.example.myapplication.data.api.response.ReservationCheckResponse
 import com.example.myapplication.data.api.response.ReservationResponse
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.*
 
 interface CompanyApi {
     // 업체 목록 요청
     @GET("/company")
-    suspend fun getCompanyList(): Call<CompanyListResponse>
+    suspend fun getCompanyList(): Response<CompanyListResponse>
 
     // 업체 상세 정보 요청
     @GET("/company/{company_id}/item")

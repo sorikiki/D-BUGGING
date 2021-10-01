@@ -13,5 +13,5 @@ class CompanyListResponse {
     val success: Boolean? = null
 
     @SerializedName("data")
-    val companyList: CompanyList? = null
+    val data: CompanyList? = null
 }
