@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.myapplication.databinding.FragmentCompanyItemBinding
 import com.example.myapplication.domain.CompanyInformation
 
@@ -27,7 +29,18 @@ class CompanyItemFragment: Fragment() {
 
     private fun initViews() {
         val companyItem = arguments?.getParcelable<CompanyInformation>("company")
-        Log.d("CompanyItemFragment", companyItem.toString())
+        binding?.apply {
+            tvCompanyName.text = companyItem?.companyName
+            tvDescription.text = companyItem?.description
+            tvAvailableAreas.text = companyItem?.availableArea
+            tvAvailableCounselTime.text = companyItem?.availableCounselTime
+            tvContactNumbers.text = companyItem?.contactNumber
+
+            Glide.with(root)
+                .load(companyItem?.thumbNail)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(ivCompanyThumb)
+        }
     }
 
     override fun onDestroyView() {
