@@ -61,6 +61,15 @@ val appModule = module {
             .create()
     }
 
+
+    single<CompanyApi> {
+        Retrofit.Builder().baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(get())
+            .build()
+            .create()
+    }
+
     // Repository
     single<UserRepository> { UserRepositoryImpl(get(), get(), get()) }
 

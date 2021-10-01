@@ -55,11 +55,15 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_result.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_start.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_company.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_company_list.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_product_list.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/main_menu_header.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_item_view.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_question_view.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/menu/home_menu.xml" value="0.12571428571428572" />
         <entry key="..\:/d-bugging-project/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/menu/toolbar_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
