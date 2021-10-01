@@ -1,6 +1,6 @@
 package com.example.myapplication.domain
 
-data class Company (
+data class CompanyInformation (
     val companyId: Int? = null,
     val companyName: String? = null,
     val shortIntro: String? = null,

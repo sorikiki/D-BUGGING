@@ -1,14 +1,17 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
+import com.example.myapplication.R
 import com.example.myapplication.databinding.ItemCompanyBinding
-import com.example.myapplication.domain.Company
+import com.example.myapplication.domain.CompanyInformation
 
 class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.ViewHolder>() {
-    var mData: List<Company> = emptyList()
+    var mData: List<CompanyInformation> = emptyList()
 
-    var onItemClickListener: ((Company) -> Unit)? = null
-    var onFavoriteClickListener: ((Company) -> Unit)? = null
+    var onItemClickListener: ((CompanyInformation) -> Unit)? = null
+    var onFavoriteClickListener: ((CompanyInformation) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
      = ViewHolder(ItemCompanyBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -33,12 +36,20 @@ class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.ViewHolder>()
             }
         }
 
-        fun bind(item: Company) {
-            val thumbImageView = binding.ivCompanyThumb
-            val titleTextView = binding.tvCompanyTitle
-            val introTextView = binding.tvCompanyIntro
+        fun bind(item: CompanyInformation) {
+            Glide.with(binding.root)
+                .load(item.thumbNail)
+                .transition(withCrossFade())
+                .into(binding.ivCompanyThumb)
 
-            //todo item 의 속성을 각각의 뷰에 대입입
+            binding.tvCompanyTitle.text = item.companyName
+            binding.tvCompanyIntro.text = item.shortIntro
+
+            if (adapterPosition % 2 == 0) {
+                binding.root.setBackgroundResource(R.color.light_grey)
+            } else {
+                binding.root.setBackgroundResource(R.color.white)
+            }
         }
     }
 }
