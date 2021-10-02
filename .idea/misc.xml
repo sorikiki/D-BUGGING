@@ -10,6 +10,13 @@
         <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/activity_register_completed.xml" value="0.22" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_register.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_register_completed.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/drawable/bg_bug_list.xml" value="0.1" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/drawable/bg_filter.xml" value="0.1" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/drawable/btn2_bg.xml" value="0.1" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/drawable/bug_bg.xml" value="0.1" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/drawable/circle_bg.xml" value="0.1" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/layout/fragment_bug_list.xml" value="0.1588447653429603" />
+        <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/layout/item_bug_list.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable-v24/circle.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1006872852233677" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable-v24/round.xml" value="0.1" />
@@ -76,7 +83,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
