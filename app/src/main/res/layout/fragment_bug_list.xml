@@ -1,95 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            android:text="크기"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView8"
-            app:layout_constraintEnd_toStartOf="@+id/textView14"
-            app:layout_constraintHorizontal_bias="0.411"
-            app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/tv_bug_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="32dp"
+        android:text="궁금한 벌레 정보를\n찾아보세요!"
+        android:textColor="@color/greyish_brown"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="52dp"
-            android:layout_marginBottom="40dp"
-            android:text="2-7cm \n(100원크기-500원크기 사이)"
-            app:layout_constraintBottom_toTopOf="@+id/textView11"
-            app:layout_constraintEnd_toEndOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bug_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bug_title" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:text="출몰 장소"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView9"
-            app:layout_constraintEnd_toStartOf="@+id/textView11"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="64dp"
-            android:layout_marginBottom="24dp"
-            android:text="어두운곳, 습한곳, 따뜻한곳"
-            app:layout_constraintBottom_toTopOf="@+id/textView12"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
-            android:text="행동 특성"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView10"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="특징"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/textView13"
-            app:layout_constraintHorizontal_bias="0.406"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="323dp" />
-
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="36dp"
-            android:text="몸이 매끄럽고 광택이 나요 \n야행성이라 밤에 주로 활동해요 \n다리와 몸에 털 같은 것이 보여요\n갈색 또는 검은색이에요\n주로 무리지어 다녀요"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="329dp" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="196dp"
-            android:layout_marginBottom="280dp"
-            android:text="기어다님, 매우 빠름, 날아다님"
-            app:layout_constraintBottom_toTopOf="@+id/textView13"
-            app:layout_constraintEnd_toEndOf="parent" />
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="더보기"
+        android:textColor="@color/turquoise_green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
