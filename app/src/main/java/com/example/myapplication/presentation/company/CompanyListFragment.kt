@@ -21,7 +21,7 @@ class CompanyListFragment : ScopeFragment(), CompanyListContract.View {
 
     private var binding: FragmentCompanyListBinding? = null
 
-    private val companyListAdapter = CompanyListAdapter()
+    val companyListAdapter = CompanyListAdapter()
 
     override val presenter: CompanyListContract.Presenter by inject()
 
@@ -54,11 +54,14 @@ class CompanyListFragment : ScopeFragment(), CompanyListContract.View {
             view?.findNavController()?.navigate(R.id.action_companyListFragment_to_companyItemFragment, bundle)
         }
 
+        companyListAdapter.onFavoriteClickListener = { companyInformation ->
+            presenter.updateCompanyFavorite(companyInformation.companyId!!, companyInformation.isCompanyInterested!!)
+            presenter.getCompanyList()
+        }
     }
 
     override fun showCompanyItems(items: List<CompanyInformation>) {
-        companyListAdapter.mData = items
-        companyListAdapter.notifyDataSetChanged()
+        companyListAdapter.submitList(items)
     }
 
     override fun showErrorMessage() {

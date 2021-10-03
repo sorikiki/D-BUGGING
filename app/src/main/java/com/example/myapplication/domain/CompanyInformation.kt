@@ -14,5 +14,5 @@ data class CompanyInformation (
     val availableArea: String? = null,
     val availableCounselTime: String? = null,
     val thumbNail: String? = null,
-    val isCompanyInterested: Boolean? = false
+    var isCompanyInterested: Boolean? = false
 ) : Parcelable

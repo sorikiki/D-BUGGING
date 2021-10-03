@@ -1,5 +1,7 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
@@ -7,8 +9,7 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.ItemCompanyBinding
 import com.example.myapplication.domain.CompanyInformation
 
-class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.ViewHolder>() {
-    var mData: List<CompanyInformation> = emptyList()
+class CompanyListAdapter : ListAdapter<CompanyInformation, CompanyListAdapter.ViewHolder>(diffUtil) {
 
     var onItemClickListener: ((CompanyInformation) -> Unit)? = null
     var onFavoriteClickListener: ((CompanyInformation) -> Unit)? = null
@@ -17,26 +18,22 @@ class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.ViewHolder>()
      = ViewHolder(ItemCompanyBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = mData[position]
+        val item = currentList[position]
         holder.bind(item)
     }
 
-    override fun getItemCount(): Int {
-        return mData.size
-    }
-
     inner class ViewHolder(private val binding: ItemCompanyBinding): RecyclerView.ViewHolder(binding.root) {
-        init {
+
+        fun bind(item: CompanyInformation) {
+
             binding.root.setOnClickListener {
-                onItemClickListener?.invoke(mData[adapterPosition])
+                onItemClickListener?.invoke(currentList[adapterPosition])
             }
 
             binding.ibInterest.setOnClickListener {
-                onFavoriteClickListener?.invoke(mData[adapterPosition])
+                onFavoriteClickListener?.invoke(currentList[adapterPosition])
             }
-        }
 
-        fun bind(item: CompanyInformation) {
             Glide.with(binding.root)
                 .load(item.thumbNail)
                 .transition(withCrossFade())
@@ -45,11 +42,30 @@ class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.ViewHolder>()
             binding.tvCompanyTitle.text = item.companyName
             binding.tvCompanyIntro.text = item.shortIntro
 
+            if (item.isCompanyInterested == true) {
+                binding.ibInterest.setBackgroundResource(R.drawable.ic_heart_fill)
+            } else {
+                binding.ibInterest.setBackgroundResource(R.drawable.ic_heart_line)
+            }
+
             if (adapterPosition % 2 == 0) {
                 binding.root.setBackgroundResource(R.color.light_grey)
             } else {
                 binding.root.setBackgroundResource(R.color.white)
             }
+        }
+    }
+
+    companion object {
+        val diffUtil = object : DiffUtil.ItemCallback<CompanyInformation>() {
+            override fun areItemsTheSame(oldItem: CompanyInformation, newItem: CompanyInformation): Boolean {
+                return oldItem.companyId == newItem.companyId
+            }
+
+            override fun areContentsTheSame(oldItem: CompanyInformation, newItem: CompanyInformation): Boolean {
+                return oldItem == newItem
+            }
+
         }
     }
 }

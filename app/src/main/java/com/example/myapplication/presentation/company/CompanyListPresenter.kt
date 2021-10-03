@@ -16,9 +16,12 @@ class CompanyListPresenter(
     private var companyItems: List<CompanyInformation>? = null
 
     override fun onViewCreated() {
-        getCompanyList()
+        if (companyItems == null) {
+            getCompanyList()
+        }
     }
 
+    // todo flickering issue (SQLite3에 캐싱필요)
     override fun getCompanyList() {
         scope.launch {
             view.showLoadingIndicator()
@@ -29,6 +32,14 @@ class CompanyListPresenter(
                 view.hideLoadingIndicator()
                 view.showCompanyItems(companyItems!!)
             }
+
+            // todo Room 에 캐싱
+        }
+    }
+
+    override fun updateCompanyFavorite(companyId: Int, isFavorite: Boolean) {
+        scope.launch {
+            companyRepository.updateCompanyFavorite(companyId, isFavorite)
         }
     }
 

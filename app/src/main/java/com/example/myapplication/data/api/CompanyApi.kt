@@ -1,23 +1,16 @@
 package com.example.myapplication.data.api
 
-import com.example.myapplication.data.api.response.CompanyItemResponse
-import com.example.myapplication.data.api.response.CompanyListResponse
-import com.example.myapplication.data.api.response.ReservationCheckResponse
-import com.example.myapplication.data.api.response.ReservationResponse
+import com.example.myapplication.data.api.response.*
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
 
 interface CompanyApi {
     // 업체 목록 요청
-    @GET("/company")
-    suspend fun getCompanyList(): Response<CompanyListResponse>
-
-    // 업체 상세 정보 요청
-    @GET("/company/{company_id}/item")
-    suspend fun getCompanyItem(
-        @Path("company_id") companyId: Int
-    ): Call<CompanyItemResponse>
+    @GET("/company/{user_id}")
+    suspend fun getCompanyList(
+        @Path("user_id") userId: String
+    ): Response<CompanyListResponse>
 
     // 업체 예약
     @Headers("accept: application/json", "content-type: application/json")
@@ -36,7 +29,8 @@ interface CompanyApi {
 
     // 업체 찜하기 추가
     @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")
-    @POST("/company/interest")
+    @FormUrlEncoded
+    @POST("/company/interest/insertion")
     suspend fun addCompanyItemToWishList(
         @Field("user_id") userId: String,
         @Field("company_id") companyId: Int
@@ -44,7 +38,8 @@ interface CompanyApi {
 
     // 업체 찜하기 해제
     @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")
-    @DELETE("/company/interest")
+    @FormUrlEncoded
+    @POST("/company/interest/removal")
     suspend fun removeCompanyItemFromWishList(
         @Field("user_id") userId: String,
         @Field("company_id") companyId: Int

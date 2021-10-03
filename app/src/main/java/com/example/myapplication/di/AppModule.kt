@@ -77,7 +77,7 @@ val appModule = module {
 
     // Repository
     single<UserRepository> { UserRepositoryImpl(get(), get(), get()) }
-    single<CompanyRepository> { CompanyRepositoryImpl(get()) }
+    single<CompanyRepository> { CompanyRepositoryImpl(get(), get()) }
 
     // Presentation
     scope<LoginActivity> {
