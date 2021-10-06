@@ -44,7 +44,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/bug_survey"
                     android:textColor="@color/dark_grey"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/survey_icon"
                     app:layout_constraintTop_toTopOf="@id/survey_icon" />
@@ -95,7 +95,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/company_connection"
                     android:textColor="@color/dark_grey"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/reservation_icon"
                     app:layout_constraintTop_toTopOf="@id/reservation_icon" />
@@ -146,7 +146,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/self_kill_explanation"
                     android:textColor="@color/dark_grey"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/product_icon"
                     app:layout_constraintTop_toTopOf="@id/product_icon" />

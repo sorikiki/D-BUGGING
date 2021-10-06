@@ -8,8 +8,16 @@ import com.example.myapplication.data.api.Url.BASE_URL
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.preference.PreferenceManager
 import com.example.myapplication.data.preference.SharedPreferenceManager
+import com.example.myapplication.data.repository.CompanyRepository
+import com.example.myapplication.data.repository.CompanyRepositoryImpl
 import com.example.myapplication.data.repository.UserRepository
 import com.example.myapplication.data.repository.UserRepositoryImpl
+import com.example.myapplication.presentation.company.CompanyListContract
+import com.example.myapplication.presentation.company.CompanyListFragment
+import com.example.myapplication.presentation.company.CompanyListPresenter
+import com.example.myapplication.presentation.home.HomeActivity
+import com.example.myapplication.presentation.home.HomeContract
+import com.example.myapplication.presentation.home.HomePresenter
 import com.example.myapplication.presentation.login.LoginActivity
 import com.example.myapplication.presentation.login.LoginContract
 import com.example.myapplication.presentation.login.LoginPresenter
@@ -58,9 +66,18 @@ val appModule = module {
             .create()
     }
 
+
+    single<CompanyApi> {
+        Retrofit.Builder().baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(get())
+            .build()
+            .create()
+    }
+
     // Repository
     single<UserRepository> { UserRepositoryImpl(get(), get(), get()) }
-
+    single<CompanyRepository> { CompanyRepositoryImpl(get(), get()) }
 
     // Presentation
     scope<LoginActivity> {
@@ -69,6 +86,14 @@ val appModule = module {
 
     scope<RegisterFragment> {
         scoped<RegisterContract.Presenter> { RegisterPresenter(get(), getSource()) }
+    }
+
+    scope<HomeActivity> {
+        scoped<HomeContract.Presenter> { HomePresenter(get(), getSource())}
+    }
+
+    scope<CompanyListFragment> {
+        scoped<CompanyListContract.Presenter> { CompanyListPresenter(get(), getSource())}
     }
 
 }

@@ -6,20 +6,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentCompanyListBinding
+import com.example.myapplication.domain.CompanyInformation
+import org.koin.android.scope.ScopeFragment
 import java.util.ArrayList
 
-class CompanyListFragment: Fragment() {
-    lateinit var companyRecyclerView: RecyclerView
-    lateinit var companyAdapter: CompanyListAdapter
-    var companyItems: ArrayList<CompanyListItem> = ArrayList<CompanyListItem>()
+class CompanyListFragment : ScopeFragment(), CompanyListContract.View {
 
     private var binding: FragmentCompanyListBinding? = null
-//
+
+    val companyListAdapter = CompanyListAdapter()
+
+    override val presenter: CompanyListContract.Presenter by inject()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,25 +33,53 @@ class CompanyListFragment: Fragment() {
     ): View = FragmentCompanyListBinding.inflate(inflater, container, false)
         .also {
             binding = it
-            companyRecyclerView= binding!!.rvCompanyList
-            //리사이클러뷰에 adapter 객체 지정
-            companyAdapter = CompanyListAdapter(companyItems)
-            companyRecyclerView.setAdapter(companyAdapter)
-            var layoutManager = LinearLayoutManager(context) // 리사이클러뷰 그리드 레이아웃
-            companyRecyclerView.setLayoutManager(layoutManager)
         }
         .root
 
-    fun addItem(name:String, grade: Double, intro:String) {
-        val item = CompanyListItem(name, grade, intro)
-        item.setName(name)
-        item.setGrade(grade)
-        item.setIntro(intro)
-        companyItems.add(item)
-    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter.onViewCreated()
 
+        initViews()
+    }
+
+    private fun initViews() {
+        binding?.rvCompanyList?.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = companyListAdapter
+        }
+
+        companyListAdapter.onItemClickListener = { companyInformation ->
+            val bundle = bundleOf("company" to companyInformation)
+            view?.findNavController()?.navigate(R.id.action_companyListFragment_to_companyItemFragment, bundle)
+        }
+
+        companyListAdapter.onFavoriteClickListener = { companyInformation ->
+            presenter.updateCompanyFavorite(companyInformation.companyId!!, companyInformation.isCompanyInterested!!)
+            presenter.getCompanyList()
+        }
+    }
+
+    override fun showCompanyItems(items: List<CompanyInformation>) {
+        companyListAdapter.submitList(items)
+    }
+
+    override fun showErrorMessage() {
+        binding?.progressBar?.visibility = View.GONE
+        binding?.contentContainer?.visibility = View.GONE
+        binding?.errorMessage?.visibility = View.VISIBLE
+    }
+
+    override fun showLoadingIndicator() {
+        binding?.progressBar?.visibility = View.VISIBLE
+        binding?.contentContainer?.visibility = View.GONE
+        binding?.errorMessage?.visibility = View.GONE
+    }
+
+    override fun hideLoadingIndicator() {
+        binding?.progressBar?.visibility = View.GONE
+        binding?.contentContainer?.visibility = View.VISIBLE
+        binding?.errorMessage?.visibility = View.GONE
     }
 
     override fun onDestroyView() {

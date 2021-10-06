@@ -6,28 +6,28 @@ data class CompanyItem(
     @SerializedName("company_id")
     val companyId: Int? = null,
 
-    @SerializedName("name")
+    @SerializedName("company_name")
     val companyName: String? = null,
 
-    @SerializedName("short_intro")
+    @SerializedName("company_short_intro")
     val shortIntro: String? = null,
 
-    @SerializedName("description")
+    @SerializedName("company_description")
     val description: String? = null,
 
-    @SerializedName("contact_number")
+    @SerializedName("contact_numbers")
     val contactNumber: String? = null,
 
     @SerializedName("killable_bugs")
     val killableBugs: String? = null,
 
-    @SerializedName("available_area")
+    @SerializedName("available_areas")
     val availableArea: String? = null,
 
     @SerializedName("available_counsel_time")
     val availableCounselTime: String? = null,
 
-    @SerializedName("thumbnail")
+    @SerializedName("thumbnail_image")
     val thumbNail: String? = null,
 
     @SerializedName("is_company_interested")
