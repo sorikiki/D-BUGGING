@@ -6,6 +6,7 @@ import androidx.core.content.edit
 class SharedPreferenceManager(
     private val sharedPreferences: SharedPreferences
 ) : PreferenceManager {
+
     override fun getUserId(): String? {
         val value = sharedPreferences.getString(USER_ID, USER_LOG_OFF)
         return if (value == USER_LOG_OFF) {

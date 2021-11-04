@@ -13,5 +13,5 @@ interface UserRepository {
 
     fun getCurrentUserName(): String?
 
-    fun logOutUser()
+    suspend fun logOutUser()
 }

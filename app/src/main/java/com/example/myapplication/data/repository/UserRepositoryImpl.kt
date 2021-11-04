@@ -3,12 +3,15 @@ package com.example.myapplication.data.repository
 import android.util.Log
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.api.UserInfo
+import com.example.myapplication.data.db.CompanyDao
 import com.example.myapplication.data.preference.PreferenceManager
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.withContext
 
 class UserRepositoryImpl(
     private val userApi: UserApi,
     private val preferenceManager: PreferenceManager,
+    private val companyDao: CompanyDao,
     private val dispatcher: CoroutineDispatcher
 ) : UserRepository {
 
@@ -50,17 +53,17 @@ class UserRepositoryImpl(
 
 
     override suspend fun clearUser(id: String) {
-        //todo userApi 의 회원탈퇴 함수 호출
         userApi.removeUser(id);
         logOutUser();
     }
 
-    override fun logOutUser() {
-        // todo 회원탈퇴는 동시에 로그아웃을 의미하므로 이는 clearUser 함수에 종속되는 함수
-        //  & 아이디와 유저이름 sharedPreference 에 각각 USER_LOG_OFF 값으로 업로드
-
+    override suspend fun logOutUser() {
         preferenceManager.putUserInfo(USER_ID, USER_LOG_OFF);
         preferenceManager.putUserInfo(USER_NAME, USER_LOG_OFF);
+
+        withContext(dispatcher) {
+            companyDao.removeCompanyItems()
+        }
     }
 
     companion object {

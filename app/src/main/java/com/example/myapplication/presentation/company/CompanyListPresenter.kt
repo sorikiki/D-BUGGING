@@ -4,6 +4,7 @@ import com.example.myapplication.data.repository.CompanyRepository
 import com.example.myapplication.domain.CompanyInformation
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class CompanyListPresenter(
@@ -13,37 +14,45 @@ class CompanyListPresenter(
 
     override val scope: CoroutineScope = MainScope()
 
-    private var companyItems: List<CompanyInformation>? = null
+    private val companyItems: MutableStateFlow<List<CompanyInformation>> =
+        MutableStateFlow(emptyList())
+
+    init {
+        observeCompanies()
+    }
 
     override fun onViewCreated() {
-        if (companyItems == null) {
-            getCompanyList()
+        scope.launch {
+            companyRepository.refreshCompanies()
+            view.showCompanyItems(companyItems.value)
         }
     }
 
-    // todo flickering issue (SQLite3에 캐싱필요)
-    override fun getCompanyList() {
-        scope.launch {
-            view.showLoadingIndicator()
-            companyItems = companyRepository.getCompanyList()
-            if (companyItems == null) {
-                view.showErrorMessage()
-            } else {
-                view.hideLoadingIndicator()
-                view.showCompanyItems(companyItems!!)
+    private fun observeCompanies() {
+        companyRepository
+            .companies
+            .onStart { view.showLoadingIndicator() }
+            .onEach {
+                if (it.isNotEmpty()) {
+                    view.hideLoadingIndicator()
+                }
+                companyItems.value = it
+                view.showCompanyItems(it)
             }
-
-            // todo Room 에 캐싱
-        }
+            .catch {
+                view.hideLoadingIndicator()
+                view.showErrorMessage()
+            }
+            .launchIn(scope)
     }
 
-    override fun updateCompanyFavorite(companyId: Int, isFavorite: Boolean) {
+    override fun updateCompanyFavorite(companyId: Int) {
         scope.launch {
-            companyRepository.updateCompanyFavorite(companyId, isFavorite)
+            companyRepository.updateCompanyFavorite(companyId)
+            companyRepository.updateRemoteCompanyList()
         }
     }
 
     override fun onDestroyView() {
-        TODO("Not yet implemented")
     }
 }

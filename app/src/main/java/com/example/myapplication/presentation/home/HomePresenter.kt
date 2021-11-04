@@ -1,15 +1,17 @@
 package com.example.myapplication.presentation.home
 
 import android.util.Log
+import androidx.annotation.MainThread
+import androidx.annotation.UiThread
 import com.example.myapplication.data.preference.PreferenceManager
 import com.example.myapplication.data.preference.SharedPreferenceManager
+import com.example.myapplication.data.repository.CompanyRepository
 import com.example.myapplication.data.repository.UserRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class HomePresenter(
     private val userRepository: UserRepository,
+    private val companyRepository: CompanyRepository,
     private val view: HomeActivity
 ) : HomeContract.Presenter {
 
@@ -29,8 +31,12 @@ class HomePresenter(
     }
 
     override fun logOutUser() {
-        userRepository.logOutUser()
-        view.moveToLoginScreen()
+        scope.launch {
+            withContext(Dispatchers.IO) {
+                userRepository.logOutUser()
+            }
+            view.moveToLoginScreen()
+        }
     }
 
     override fun clearUser(id: String) {
