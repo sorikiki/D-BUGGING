@@ -30,5 +30,4 @@ class RegisterPresenter(
         TODO("Not yet implemented")
     }
 
-
 }
