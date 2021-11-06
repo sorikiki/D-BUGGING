@@ -10,9 +10,10 @@
         <action
             android:id="@+id/action_companyListFragment_to_companyItemFragment"
             app:destination="@id/companyItemFragment" />
-        <argument
-            android:name="CompanyInformation"
-            app:argType="com.example.myapplication.domain.CompanyInformation" />
+        <action
+            android:id="@+id/action_companyListFragment_to_companySearchFragment"
+            app:destination="@id/companySearchFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/companyItemFragment"
@@ -40,6 +41,13 @@
         android:name="com.example.myapplication.presentation.company.CompanyReservationCompletedFragment">
         <action
             android:id="@+id/action_companyReservationCompletedFragment_to_companyItemFragment"
+            app:destination="@id/companyItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/companySearchFragment"
+        android:name="com.example.myapplication.presentation.company.CompanySearchFragment" >
+        <action
+            android:id="@+id/action_companySearchFragment_to_companyItemFragment"
             app:destination="@id/companyItemFragment" />
     </fragment>
 </navigation>

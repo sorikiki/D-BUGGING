@@ -7,12 +7,14 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-class CompanyListPresenter(
+class CompanySearchPresenter(
     private val companyRepository: CompanyRepository,
-    val view: CompanyListFragment
-) : CompanyListContract.Presenter {
+    val view: CompanySearchFragment
+) : CompanySearchContract.Presenter{
 
     override val scope: CoroutineScope = MainScope()
+
+    private val queryString: MutableStateFlow<String> = MutableStateFlow("")
 
     private val companyItems: MutableStateFlow<List<CompanyInformation>> =
         MutableStateFlow(emptyList())
@@ -23,25 +25,30 @@ class CompanyListPresenter(
 
     override fun onViewCreated() {
         scope.launch {
-            companyRepository.refreshCompanies()
             view.showCompanyItems(companyItems.value)
+            companyRepository.refreshCompanies()
+        }
+    }
+
+    override fun filterStations(query: String) {
+        scope.launch {
+            queryString.emit(query)
         }
     }
 
     private fun observeCompanies() {
         companyRepository
             .companies
-            .onStart { view.showLoadingIndicator() }
-            .onEach {
-                if (it.isNotEmpty()) {
-                    view.hideLoadingIndicator()
+            .combine(queryString) { companies, query ->
+                if (query.isBlank()) {
+                    emptyList()
+                } else {
+                    companies.filter { it.companyName?.contains(query) ?: false }
                 }
+            }
+            .onEach {
                 companyItems.value = it
                 view.showCompanyItems(it)
-            }
-            .catch {
-                view.hideLoadingIndicator()
-                view.showErrorMessage()
             }
             .launchIn(scope)
     }
@@ -54,6 +61,6 @@ class CompanyListPresenter(
     }
 
     override fun onDestroyView() {
+        TODO("Not yet implemented")
     }
-
 }

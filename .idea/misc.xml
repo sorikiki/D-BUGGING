@@ -39,7 +39,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1006872852233677" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/input_bg.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_bug.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_company.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_company.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_login.xml" value="0.18857142857142858" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -56,6 +56,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_check.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_completed.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_search.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_home.xml" value="0.10285714285714286" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_detail_list.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_item.xml" value="0.125" />

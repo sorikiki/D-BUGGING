@@ -13,9 +13,7 @@ import com.example.myapplication.data.repository.CompanyRepository
 import com.example.myapplication.data.repository.CompanyRepositoryImpl
 import com.example.myapplication.data.repository.UserRepository
 import com.example.myapplication.data.repository.UserRepositoryImpl
-import com.example.myapplication.presentation.company.CompanyListContract
-import com.example.myapplication.presentation.company.CompanyListFragment
-import com.example.myapplication.presentation.company.CompanyListPresenter
+import com.example.myapplication.presentation.company.*
 import com.example.myapplication.presentation.home.HomeActivity
 import com.example.myapplication.presentation.home.HomeContract
 import com.example.myapplication.presentation.home.HomePresenter
@@ -99,7 +97,11 @@ val appModule = module {
     }
 
     scope<CompanyListFragment> {
-        scoped<CompanyListContract.Presenter> { CompanyListPresenter(get(), getSource())}
+        scoped<CompanyListContract.Presenter> { CompanyListPresenter(get(), getSource()) }
+    }
+
+    scope<CompanySearchFragment> {
+        scoped<CompanySearchContract.Presenter> { CompanySearchPresenter(get(), getSource()) }
     }
 
 }

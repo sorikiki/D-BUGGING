@@ -35,4 +35,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="list_not_found">목록을 불러올 수 없습니다.</string>
+    <string name="please_enter_queries">검색어를 입력해 주세요</string>
+    <string name="cancel_search">검색 취소</string>
 </resources>

@@ -1,35 +1,36 @@
 package com.example.myapplication.presentation.company
 
 import CompanyListAdapter
+import android.app.Activity
 import android.os.Bundle
-import android.util.Log
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.view.inputmethod.InputMethodManager
 import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
-import com.example.myapplication.databinding.FragmentCompanyListBinding
+import com.example.myapplication.databinding.FragmentCompanySearchBinding
 import com.example.myapplication.domain.CompanyInformation
-import okhttp3.internal.notify
 import org.koin.android.scope.ScopeFragment
 
-class CompanyListFragment : ScopeFragment(), CompanyListContract.View {
+class CompanySearchFragment : ScopeFragment(), CompanySearchContract.View {
 
-    private var binding: FragmentCompanyListBinding? = null
+    override val presenter: CompanySearchContract.Presenter by inject()
 
     private val companyListAdapter = CompanyListAdapter()
 
-    override val presenter: CompanyListContract.Presenter by inject()
+    private var binding: FragmentCompanySearchBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
 
-    ): View = FragmentCompanyListBinding.inflate(inflater, container, false)
+    ): View = FragmentCompanySearchBinding.inflate(inflater, container, false)
         .also {
             binding = it
         }
@@ -37,6 +38,7 @@ class CompanyListFragment : ScopeFragment(), CompanyListContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initViews()
         bindViews()
 
@@ -48,13 +50,20 @@ class CompanyListFragment : ScopeFragment(), CompanyListContract.View {
             layoutManager = LinearLayoutManager(context)
             adapter = companyListAdapter
         }
-
     }
 
     private fun bindViews() {
+        binding?.searchEditTextView?.addTextChangedListener { editable ->
+            presenter.filterStations(editable.toString())
+        }
+
+        binding?.searchBarIcon?.setOnClickListener {
+            hideKeyBoard()
+        }
+
         companyListAdapter.onItemClickListener = { companyInformation ->
             val bundle = bundleOf("company" to companyInformation)
-            view?.findNavController()?.navigate(R.id.action_companyListFragment_to_companyItemFragment, bundle)
+            view?.findNavController()?.navigate(R.id.action_companySearchFragment_to_companyItemFragment, bundle)
         }
 
         companyListAdapter.onFavoriteClickListener = { companyInformation ->
@@ -68,26 +77,9 @@ class CompanyListFragment : ScopeFragment(), CompanyListContract.View {
         }
     }
 
-    override fun showErrorMessage() {
-        binding?.progressBar?.visibility = View.GONE
-        binding?.contentContainer?.visibility = View.GONE
-        binding?.errorMessage?.visibility = View.VISIBLE
-    }
-
-    override fun showLoadingIndicator() {
-        binding?.progressBar?.visibility = View.VISIBLE
-        binding?.contentContainer?.visibility = View.GONE
-        binding?.errorMessage?.visibility = View.GONE
-    }
-
-    override fun hideLoadingIndicator() {
-        binding?.progressBar?.visibility = View.GONE
-        binding?.contentContainer?.visibility = View.VISIBLE
-        binding?.errorMessage?.visibility = View.GONE
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        presenter.onDestroyView()
+    private fun hideKeyBoard() {
+        val inputMethodManager =
+            context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(activity?.currentFocus?.windowToken, 0)
     }
 }

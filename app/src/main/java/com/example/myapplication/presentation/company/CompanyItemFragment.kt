@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentCompanyItemBinding
 import com.example.myapplication.domain.CompanyInformation
 
@@ -25,6 +27,7 @@ class CompanyItemFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        bindViews()
     }
 
     private fun initViews() {
@@ -40,6 +43,12 @@ class CompanyItemFragment: Fragment() {
                 .load(companyItem?.thumbNail)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(ivCompanyThumb)
+        }
+    }
+
+    private fun bindViews() {
+        binding?.btReservation?.setOnClickListener {
+            findNavController().navigate(R.id.action_companyItemFragment_to_companyReservationFragment)
         }
     }
 
