@@ -1,5 +1,7 @@
 package com.example.myapplication.data.repository
 
+import com.example.myapplication.data.api.CompanyApi
+import com.example.myapplication.data.api.ReservationInfo
 import com.example.myapplication.domain.CompanyInformation
 import kotlinx.coroutines.flow.Flow
 
@@ -15,5 +17,7 @@ interface CompanyRepository {
     // MySQL 에도 변경사항 업데이트
     suspend fun updateRemoteCompanyList()
 
+    suspend fun makeReservation(companyId: Int, reservationInfo: ReservationInfo)
 
+    suspend fun requestInformation(companyId: Int, reservationId: Int)
 }

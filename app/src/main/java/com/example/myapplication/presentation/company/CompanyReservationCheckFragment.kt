@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentCompanyReservationCheckBinding
 
 class CompanyReservationCheckFragment: Fragment() {
@@ -20,9 +22,17 @@ class CompanyReservationCheckFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        bindViews()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+    }
+
+    private fun bindViews() {
+        binding?.btnSubmit?.setOnClickListener {
+            findNavController().navigate(R.id.action_companyReservationCheckFragment_to_companyReservationCompletedFragment)
+        }
     }
 }
