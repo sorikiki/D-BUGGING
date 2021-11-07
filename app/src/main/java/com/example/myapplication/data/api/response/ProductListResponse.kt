@@ -13,5 +13,5 @@ data class ProductListResponse(
     val success: Boolean? = null,
 
     @SerializedName("data")
-    val productList: List<ProductItem>? = null
+    val data: ProductList? = null
 )

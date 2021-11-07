@@ -6,14 +6,22 @@
 
     <fragment
         android:id="@+id/productListFragment"
-        android:name="com.example.myapplication.presentation.product.ProductListFragment"
-        android:label="ProductListFragment" >
+        android:name="com.example.myapplication.presentation.product.ProductListFragment">
         <action
             android:id="@+id/action_productListFragment_to_productItemFragment"
             app:destination="@id/productItemFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_productSearchFragment"
+            app:destination="@id/productSearchFragment" />
     </fragment>
     <fragment
         android:id="@+id/productItemFragment"
-        android:name="com.example.myapplication.presentation.product.ProductItemFragment"
-        android:label="ProductItemFragment" />
+        android:name="com.example.myapplication.presentation.product.ProductItemFragment" />
+    <fragment
+        android:id="@+id/productSearchFragment"
+        android:name="com.example.myapplication.presentation.product.ProductSearchFragment">
+        <action
+            android:id="@+id/action_productSearchFragment_to_productItemFragment"
+            app:destination="@id/productItemFragment" />
+    </fragment>
 </navigation>

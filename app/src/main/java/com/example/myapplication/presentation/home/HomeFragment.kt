@@ -39,7 +39,7 @@ class HomeFragment: Fragment() {
                 startActivity(intent)
             }
 
-            bugMenu.setOnClickListener {
+            bugMenuButton.setOnClickListener {
                 val intent = Intent(context, BugActivity::class.java)
                 startActivity(intent)
             }

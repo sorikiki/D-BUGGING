@@ -6,24 +6,27 @@ data class ProductItem(
     @SerializedName("product_id")
     val productId: Int? = null,
 
-    @SerializedName("name")
+    @SerializedName("product_name")
     val productName: String? = null,
 
-    @SerializedName("type")
-    val productType: Int? = null,
+    @SerializedName("product_type")
+    val productType: String? = null,
 
-    @SerializedName("short_intro")
+    @SerializedName("product_short_intro")
     val shortIntro: String? = null,
 
-    @SerializedName("description")
+    @SerializedName("product_description")
     val productDescription: String? = null,
 
     @SerializedName("tag")
     val tag: String? = null,
 
-    @SerializedName("thumbnail")
+    @SerializedName("thumbnail_image")
     val thumbnail: String? = null,
 
     @SerializedName("interest_num")
-    val interestNum: Int? = null
+    val interestNum: Int? = null,
+
+    @SerializedName("is_product_interested")
+    val isProductInterested: Boolean? = false
 )

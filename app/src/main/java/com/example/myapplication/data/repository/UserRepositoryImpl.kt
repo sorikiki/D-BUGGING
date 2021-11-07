@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.api.UserInfo
 import com.example.myapplication.data.db.CompanyDao
+import com.example.myapplication.data.db.ProductDao
 import com.example.myapplication.data.preference.PreferenceManager
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
@@ -12,6 +13,7 @@ class UserRepositoryImpl(
     private val userApi: UserApi,
     private val preferenceManager: PreferenceManager,
     private val companyDao: CompanyDao,
+    private val productDao: ProductDao,
     private val dispatcher: CoroutineDispatcher
 ) : UserRepository {
 
@@ -63,6 +65,7 @@ class UserRepositoryImpl(
 
         withContext(dispatcher) {
             companyDao.removeCompanyItems()
+            productDao.removeProductItems()
         }
     }
 

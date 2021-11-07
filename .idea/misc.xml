@@ -65,7 +65,8 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_product_interest_list.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_survey_detail_list.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_item.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_list.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_list.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_search.xml" value="0.10234375" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_register.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_register_completed.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_signin.xml" value="0.3828571428571429" />
@@ -75,6 +76,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_start.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_company.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_company_list.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_product.xml" value="0.10234375" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_product_list.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/main_menu_header.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_item_view.xml" value="0.125" />

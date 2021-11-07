@@ -19,5 +19,5 @@ interface CompanyDao {
     suspend fun updateCompany(companyEntity: CompanyEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCompanyList(station: List<CompanyEntity>)
+    suspend fun insertCompanyList(companies: List<CompanyEntity>)
 }

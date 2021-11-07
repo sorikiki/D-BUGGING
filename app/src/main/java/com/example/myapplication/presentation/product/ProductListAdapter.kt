@@ -1,90 +1,80 @@
 package com.example.myapplication.presentation.product
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.myapplication.R
-import java.util.ArrayList
+import com.example.myapplication.databinding.ItemProductBinding
+import com.example.myapplication.domain.ProductInformation
 
-class ProductListAdapter internal constructor(list: ArrayList<ProductListItem>?) :
-    RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
-    private var mData: ArrayList<ProductListItem>? = null
+class ProductListAdapter :
+    ListAdapter<ProductInformation, ProductListAdapter.ViewHolder>(diffUtil) {
 
-    // 클릭 이벤트 리스너 인터페이스 정의
-    interface OnItemClickListener {
-        fun onItemClick(v: View?, pos: Int)
-    }
+    var onItemClickListener: ((ProductInformation) -> Unit)? = null
+    var onFavoriteClickListener: ((ProductInformation) -> Unit)? = null
 
-    private var mListener: OnItemClickListener? = null //전달된 리스너 객체를 저장할 변수
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        ViewHolder(ItemProductBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
-    //리스터 객체를 전달하는 메소드
-    fun setOnItemClickListener(listener: OnItemClickListener?) {
-        mListener = listener
-    }
-
-    // onCreateViewHolder() - 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴.
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val context = parent.context
-        val inflater =
-            context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view: View = inflater.inflate(R.layout.item_product_list, parent, false)
-        return ViewHolder(view)
-    }
-
-    // onBindViewHolder() - position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
-    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = mData!![position]
-
-        //썸네일
-        //val drawable =
-        //holder.itemView.context.getDrawable(R.drawable.ic_fo_search_empty)
-        //holder.thumb.background = drawable
-        //  이름, 인트로
-        holder.name.setText(item.getName())
-        holder.intro.setText(item.getIntro())
-
+        val item = currentList[position]
+        holder.bind(item)
     }
 
-    // getItemCount() - 전체 데이터 갯수 리턴.
-    override fun getItemCount(): Int {
-        return mData!!.size
-    }
+    inner class ViewHolder(private val binding: ItemProductBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-    // 아이템 뷰를 저장하는 뷰홀더 클래스.
-    inner class ViewHolder internal constructor(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-        var thumb: ImageView
-        var name: TextView
-        var intro: TextView
+        fun bind(item: ProductInformation) {
 
-        init {
-            // 뷰 객체에 대한 참조. (hold strong reference)
-            thumb = itemView.findViewById(R.id.iv_product_thumb)
-            name = itemView.findViewById(R.id.tv_product_title)
-            intro = itemView.findViewById(R.id.tv_product_intro)
-//
-            //아이템 클릭이벤트처리
-            itemView.setOnClickListener { v ->
-                val position = adapterPosition
-                if (position != RecyclerView.NO_POSITION) {
-                    if (mListener != null) {
-                        mListener!!.onItemClick(v, position)
-                    }
-                }
+            binding.root.setOnClickListener {
+                onItemClickListener?.invoke(currentList[adapterPosition])
             }
 
+            binding.ibInterest.setOnClickListener {
+                onFavoriteClickListener?.invoke(currentList[adapterPosition])
+            }
+
+            Glide.with(binding.root)
+                .load(item.thumbnail)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(binding.ivProductThumb)
+
+            binding.tvProductTitle.text = item.productName
+            binding.tvProductIntro.text = item.shortIntro
+
+            if (item.isProductInterested == true) {
+                binding.ibInterest.setBackgroundResource(R.drawable.ic_heart_fill)
+            } else {
+                binding.ibInterest.setBackgroundResource(R.drawable.ic_heart_line)
+            }
+
+            if (adapterPosition % 2 == 0) {
+                binding.root.setBackgroundResource(R.color.light_grey)
+            } else {
+                binding.root.setBackgroundResource(R.color.white)
+            }
         }
     }
 
-    // 생성자에서 데이터 리스트 객체를 전달받음.
-    init {
-        mData = list
-    }
+    companion object {
+        val diffUtil = object : DiffUtil.ItemCallback<ProductInformation>() {
+            override fun areItemsTheSame(
+                oldItem: ProductInformation,
+                newItem: ProductInformation
+            ): Boolean {
+                return oldItem.productId == newItem.productId
+            }
 
+            override fun areContentsTheSame(
+                oldItem: ProductInformation,
+                newItem: ProductInformation
+            ): Boolean {
+                return oldItem == newItem
+            }
+        }
+    }
 }

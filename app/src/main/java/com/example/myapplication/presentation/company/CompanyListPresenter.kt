@@ -53,7 +53,6 @@ class CompanyListPresenter(
         }
     }
 
-    override fun onDestroyView() {
-    }
+    override fun onDestroyView() {}
 
 }
