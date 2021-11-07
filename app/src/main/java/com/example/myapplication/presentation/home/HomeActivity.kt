@@ -6,6 +6,7 @@ import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
@@ -40,7 +41,6 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
 
         val currentUserId = presenter.setCurrentUserId()
         val currentUserName = presenter.setCurrentUserName()
-        Log.d("HomeActivity", "$currentUserId $currentUserName")
 
         initViews(currentUserName)
         bindViews(currentUserId)
@@ -85,9 +85,13 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
         }
 
         findViewById<TextView>(R.id.tv_sign_out).setOnClickListener {
-            // todo 회원탈퇴
             presenter.clearUser(currentUserId)
             presenter.logOutUser()
+        }
+
+        findViewById<ImageView>(R.id.my_page_icon).setOnClickListener {
+            val intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
         }
 
         navigationDrawer.setNavigationItemSelectedListener { menu ->
@@ -96,7 +100,23 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
                     val intent = Intent(this, CompanyActivity::class.java)
                     startActivity(intent)
                     true
-                } else -> true
+                }
+                R.id.myPageActivity -> {
+                    val intent = Intent(this, MyPageActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.bugActivity -> {
+                    val intent = Intent(this, BugActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.productActivity -> {
+                    val intent = Intent(this, ProductActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> true
             }
         }
     }

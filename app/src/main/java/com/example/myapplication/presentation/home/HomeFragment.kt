@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.FragmentHomeBinding
+import com.example.myapplication.presentation.bug.BugActivity
 import com.example.myapplication.presentation.company.CompanyActivity
+import com.example.myapplication.presentation.product.ProductActivity
 
 class HomeFragment: Fragment() {
     private var binding: FragmentHomeBinding? = null
@@ -29,6 +31,16 @@ class HomeFragment: Fragment() {
         binding?.apply {
             reservationMenu.setOnClickListener {
                 val intent = Intent(context, CompanyActivity::class.java)
+                startActivity(intent)
+            }
+
+            productMenu.setOnClickListener {
+                val intent = Intent(context, ProductActivity::class.java)
+                startActivity(intent)
+            }
+
+            bugMenu.setOnClickListener {
+                val intent = Intent(context, BugActivity::class.java)
                 startActivity(intent)
             }
 
