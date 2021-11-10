@@ -45,7 +45,6 @@ class BugListFragment: ScopeFragment(), BugListContract.View {
 
     private fun initViews() {
         binding?.rvBugList?.apply {
-            layoutManager = GridLayoutManager(context, 2)
             adapter = bugListAdapter
         }
     }

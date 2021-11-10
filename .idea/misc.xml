@@ -21,13 +21,16 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1006872852233677" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable-v24/round.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable-v24/round_2.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_bug_list.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_filter.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn2_bg.xml" value="0.10173611111111111" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg2.xml" value="0.13796296296296295" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bug_bg.xml" value="0.10173611111111111" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/circle_bg.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/grey_bg.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/home_main_menu_bg.xml" value="0.1006872852233677" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_email.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.10173611111111111" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_house.xml" value="0.14114583333333333" />
@@ -50,7 +53,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_register_completed.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_survey.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/company_item.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_item.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_item.xml" value="0.1142857142857143" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_list.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_search.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_item.xml" value="0.10285714285714286" />
