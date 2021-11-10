@@ -3,6 +3,7 @@ package com.example.myapplication.di
 import android.app.Activity
 import android.util.Log
 import com.example.myapplication.BuildConfig
+import com.example.myapplication.data.api.BugApi
 import com.example.myapplication.data.api.CompanyApi
 import com.example.myapplication.data.api.ProductApi
 import com.example.myapplication.data.api.Url.BASE_URL
@@ -11,6 +12,7 @@ import com.example.myapplication.data.db.AppDatabase
 import com.example.myapplication.data.preference.PreferenceManager
 import com.example.myapplication.data.preference.SharedPreferenceManager
 import com.example.myapplication.data.repository.*
+import com.example.myapplication.presentation.bug.*
 import com.example.myapplication.presentation.company.*
 import com.example.myapplication.presentation.home.HomeActivity
 import com.example.myapplication.presentation.home.HomeContract
@@ -39,6 +41,7 @@ val appModule = module {
     single { AppDatabase.build(androidApplication()) }
     single { get<AppDatabase>().companyDao() }
     single { get<AppDatabase>().productDao() }
+    single { get<AppDatabase>().bugDao() }
 
     // Preference
     single { androidContext().getSharedPreferences("preference", Activity.MODE_PRIVATE) }
@@ -87,10 +90,19 @@ val appModule = module {
             .create()
     }
 
+    single<BugApi> {
+        Retrofit.Builder().baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(get())
+            .build()
+            .create()
+    }
+
     // Repository
-    single<UserRepository> { UserRepositoryImpl(get(), get(), get(), get(), get()) }
+    single<UserRepository> { UserRepositoryImpl(get(), get(), get(), get(), get(), get()) }
     single<CompanyRepository> { CompanyRepositoryImpl(get(), get(), get(), get()) }
     single<ProductRepository> { ProductRepositoryImpl(get(), get(), get(), get() )}
+    single<BugRepository> { BugRepositoryImpl(get(), get(), get()) }
 
     // Presentation
     scope<LoginActivity> {
@@ -119,5 +131,13 @@ val appModule = module {
 
     scope<ProductSearchFragment> {
         scoped<ProductSearchContract.Presenter> { ProductSearchPresenter(get(), getSource()) }
+    }
+
+    scope<BugListFragment> {
+        scoped<BugListContract.Presenter> { BugListPresenter(get(), getSource()) }
+    }
+
+    scope<BugSearchFragment> {
+        scoped<BugSearchContract.Presenter> { BugSearchPresenter(get(), getSource()) }
     }
 }
