@@ -478,6 +478,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/et_extra_message"
                 android:layout_width="match_parent"
                 android:layout_height="114dp"
                 android:layout_gravity="left"
