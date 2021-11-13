@@ -12,7 +12,7 @@ data class ProductInformation(
     val productDescription: String? = null,
     val tag: String? = null,
     val thumbnail: String? = null,
-    val interestNum: Int? = null,
+    val interestNum: Int? = 0,
     val isProductInterested: Boolean? = false
 ) : Parcelable
 

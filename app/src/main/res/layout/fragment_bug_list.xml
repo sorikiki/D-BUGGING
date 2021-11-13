@@ -42,15 +42,15 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_bug_list"
             android:layout_width="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_bug_title"
-            tools:listitem="@layout/item_bug" />
+            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_bug"
+            tools:spanCount="2" />
 
         <Button
             android:layout_width="match_parent"

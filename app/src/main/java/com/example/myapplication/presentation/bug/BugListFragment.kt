@@ -1,5 +1,6 @@
 package com.example.myapplication.presentation.bug
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,6 +47,8 @@ class BugListFragment: ScopeFragment(), BugListContract.View {
     private fun initViews() {
         binding?.rvBugList?.apply {
             adapter = bugListAdapter
+            layoutManager = GridLayoutManager(context, 2)
+            addItemDecoration(GridLayoutSpacingDecoration())
         }
     }
 
@@ -83,5 +86,23 @@ class BugListFragment: ScopeFragment(), BugListContract.View {
     override fun onDestroyView() {
         super.onDestroyView()
         presenter.onDestroyView()
+    }
+}
+
+private class GridLayoutSpacingDecoration(): RecyclerView.ItemDecoration() {
+    private val halfSpace = 24;
+
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State
+    ) {
+        parent.clipToPadding = true
+
+        outRect.top = halfSpace
+        outRect.bottom = halfSpace
+        outRect.left = halfSpace
+        outRect.right = halfSpace
     }
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentCompanyItemBinding
@@ -42,6 +43,7 @@ class CompanyItemFragment: Fragment() {
             Glide.with(root)
                 .load(companyItem?.thumbNail)
                 .transition(DrawableTransitionOptions.withCrossFade())
+                .transform(CenterCrop())
                 .into(ivCompanyThumb)
         }
     }

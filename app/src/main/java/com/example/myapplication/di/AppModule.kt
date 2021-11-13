@@ -101,7 +101,7 @@ val appModule = module {
     // Repository
     single<UserRepository> { UserRepositoryImpl(get(), get(), get(), get(), get(), get()) }
     single<CompanyRepository> { CompanyRepositoryImpl(get(), get(), get(), get()) }
-    single<ProductRepository> { ProductRepositoryImpl(get(), get(), get(), get() )}
+    single<ProductRepository> { ProductRepositoryImpl(get(), get(), get(), get()) }
     single<BugRepository> { BugRepositoryImpl(get(), get(), get()) }
 
     // Presentation
@@ -114,7 +114,7 @@ val appModule = module {
     }
 
     scope<HomeActivity> {
-        scoped<HomeContract.Presenter> { HomePresenter(get(), get(), getSource())}
+        scoped<HomeContract.Presenter> { HomePresenter(get(), get(), getSource()) }
     }
 
     scope<CompanyListFragment> {
@@ -131,6 +131,10 @@ val appModule = module {
 
     scope<ProductSearchFragment> {
         scoped<ProductSearchContract.Presenter> { ProductSearchPresenter(get(), getSource()) }
+    }
+
+    scope<ProductItemFragment> {
+        scoped<ProductItemContract.Presenter> { ProductItemPresenter(get(), getSource()) }
     }
 
     scope<BugListFragment> {

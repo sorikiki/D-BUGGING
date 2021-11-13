@@ -30,7 +30,7 @@ class BugListAdapter :
                 onItemClickListener?.invoke(currentList[adapterPosition])
             }
 
-           binding.btnBugItem.text = item.bugName;
+            binding.btnBugItem.text = item.bugName;
         }
     }
 
