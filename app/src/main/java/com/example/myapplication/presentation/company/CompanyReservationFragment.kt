@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowId
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -24,21 +23,11 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
     private lateinit var bugName: String
     private lateinit var firstFoundDate: String
     private lateinit var firstFoundPlace: String
-
-    private val numOfRooms by lazy {
-        binding?.etRoomCount?.text.toString().let {
-            if (it.isNotEmpty()) {
-                it.toDouble()
-            } else {
-                null
-            }
-        }
-    }
+    private lateinit var numOfRooms: String
     private lateinit var wantedStartDate: String
     private lateinit var wantedEndDate: String
     private lateinit var reserveDateTime: String
     private lateinit var extraMessage: String
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,10 +45,6 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
         bindViews()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
-
     private fun bindViews() {
         /*binding?.btnSubmit?.setOnClickListener {
             findNavController().navigate(R.id.action_companyReservationFragment_to_companyReservationCheckFragment)
@@ -71,7 +56,7 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
                 bugName = etBug.text.toString()
                 firstFoundDate = etFindDate.text.toString()
                 firstFoundPlace = etFindSpot.text.toString()
-                //numOfRooms = etRoomCount.text.toDouble()
+                numOfRooms = etRoomCount.text.toString()
                 //wantedStartDate =
                 //wantedEndDate =
                 extraMessage = etExtraMessage.text.toString()
@@ -83,7 +68,7 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
                         bugName,
                         firstFoundDate,
                         firstFoundPlace,
-                        //numOfRooms,
+                        numOfRooms,
                         wantedStartDate,
                         wantedEndDate,
                         reserveDateTime,
@@ -118,29 +103,28 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
         bugName: String,
         firstFoundDate: String,
         firstFoundPlace: String,
-        numOfRooms: Int? = null,
         wantedStartDate: String,
         wantedEndDate: String,
         reserveDateTime: String,
-        extraMessage: String? = null
+        extraMessage: String? = null,
+        extraMessage1: String
     ) {
         presenter.makeReservation(
-            companyId = ,
             ReservationInfo(
                 bugName = bugName,
                 firstFoundDate = firstFoundDate,
                 firstFoundPlace = firstFoundPlace,
-                //has_bug_been_shown
+                hasBugBeenShown = hasBugBeenShown,
                 wantedStartDate = wantedStartDate,
                 wantedEndDate = wantedEndDate,
                 reserveDateTime = reserveDateTime,
-                //availableVisitTime = availableVisitTime,
+                availableVisitTime = availableVisitTime,
                 extraMessage = extraMessage
             ))
     }
 
     override fun processReservationSuccess() {
-        view?.findNavController()?.navigate(R.id.action_companyReservationCheckFragment_to_companyReservationCompletedFragment)
+        view?.findNavController()?.navigate(R.id.action_companyReservationFragment_to_companyReservationCheckFragment)
     }
 
     override fun showLoadingIndicator() {
@@ -150,4 +134,9 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
     override fun hideLoadingIndicator() {
         TODO("Not yet implemented")
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
+
 }

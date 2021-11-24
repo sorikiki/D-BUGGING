@@ -16,7 +16,7 @@ class CompanyReservationPresenter (
 
     override val scope: CoroutineScope = MainScope()
 
-    override fun makeReservation(companyId: Int, reservationInfo: ReservationInfo) {
+    override fun makeReservation(companyId: ReservationInfo, reservationInfo: ReservationInfo) {
         scope.launch {
             companyRepository.makeReservation(companyId, reservationInfo)
             view.processReservationSuccess()

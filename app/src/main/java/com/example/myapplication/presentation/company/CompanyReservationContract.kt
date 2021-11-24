@@ -15,6 +15,6 @@ interface CompanyReservationContract {
     }
 
     interface Presenter : BasePresenter{
-        fun makeReservation(companyId: Int, reservationInfo: ReservationInfo)
+        fun makeReservation(companyId: ReservationInfo, reservationInfo: ReservationInfo)
     }
 }
