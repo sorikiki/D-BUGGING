@@ -64,9 +64,7 @@ class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.V
 
     private fun bindViews() {
         binding?.apply {
-            //radiobuttonclick리스너 사용하기
-            fun onRadioButtonClicked(group: RadioGroup?, checkedId: Int) {
-                //어떤 버튼이 체크되었는지 확인
+            radiogroup.setOnCheckedChangeListener { group: RadioGroup?, checkedId: Int ->
                 when (group?.id) {
                     R.id.radiogroup ->
                         when(checkedId) {
