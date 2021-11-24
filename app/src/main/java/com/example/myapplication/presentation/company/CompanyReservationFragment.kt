@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowId
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -33,6 +34,7 @@ class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.V
     private lateinit var wantedEndDate: String
     private lateinit var reserveDateTime: String
     private lateinit var extraMessage: String
+    private var hasBugBeenShown = false
     val numOfRooms = presenter.getCurrentUserInfo().numOfRooms
     val userId = presenter.getCurrentUserInfo().userId
 
@@ -60,11 +62,16 @@ class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.V
 
 
     private fun bindViews() {
-        /*binding?.btnSubmit?.setOnClickListener {
-            findNavController().navigate(R.id.action_companyReservationFragment_to_companyReservationCheckFragment)
-        }*/
-
         binding?.apply {
+            radiogroup.setOnCheckedChangeListener { group: RadioGroup?, checkedId: Int ->
+                when (group?.id) {
+                    R.id.radiogroup ->
+                        when(checkedId) {
+                            R.id.rb_yes -> hasBugBeenShown = true
+                            R.id.rb_no -> hasBugBeenShown = false
+                        }
+                }
+            }
 
             btnSubmit.setOnClickListener {
                 bugName = etBug.text.toString()
@@ -90,28 +97,6 @@ class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.V
             }
         }
     }
-
-    /*
-    //radiobuttonclick리스너 사용하기
-    fun onRadioButtonClicked(view: View) {
-        if (view is RadioButton) {
-            //버튼이 체크되었는지 확인
-            val checked = view.isChecked
-
-            //어떤 버튼이 체크되었는지 확인
-            when (view.getId()) {
-                R.id.rb_yes ->
-                    if (checked) {
-                        hasBugBeenShown = true
-                    }
-                R.id.rb_no ->
-                    if (checked) {
-                        hasBugBeenShown = false
-                    }
-            }
-        }
-    }
-     */
 
     fun succeedReservation(
         bugName: String,
