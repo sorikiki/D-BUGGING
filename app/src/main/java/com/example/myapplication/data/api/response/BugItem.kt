@@ -4,23 +4,23 @@ import com.google.gson.annotations.SerializedName
 
 data class BugItem(
     @SerializedName("bug_id")
-    val bugId: Int,
+    val bugId: Int? = null,
 
     @SerializedName("bug_name")
-    val bugName: String,
+    val bugName: String? = null,
+
+    @SerializedName("appearance")
+    val appearance: String? = null,
+
+    @SerializedName("color")
+    val color: String? = null,
 
     @SerializedName("habitat")
-    val habitat: String,
+    val habitat: String? = null,
 
     @SerializedName("movement")
-    val movement: String,
+    val movement: String? = null,
 
-    @SerializedName("description")
-    val description: String,
-
-    @SerializedName("thumbnail")
-    val thumbnailUrl: String,
-
-    @SerializedName("actual")
-    val actualImageUrl: String
+    @SerializedName("survey_result")
+    val surveyResult: String? = null
 )

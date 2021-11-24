@@ -18,7 +18,7 @@ class ProductRepositoryImpl(
     private val preferenceManager: PreferenceManager,
     private val productDao: ProductDao,
     private val dispatcher: CoroutineDispatcher
-): ProductRepository {
+) : ProductRepository {
 
     override val products: Flow<List<ProductInformation>> =
         productDao.getProductList()
@@ -26,7 +26,7 @@ class ProductRepositoryImpl(
             .map { it.toProductInformation().sortedByDescending { it.isProductInterested } }
             .flowOn(dispatcher)
 
-    override suspend fun refreshProducts() : Unit = withContext(dispatcher) {
+    override suspend fun refreshProducts(): Unit = withContext(dispatcher) {
         productApi.getProductList(getCurrentUser()!!)
             .body()
             .also { response ->

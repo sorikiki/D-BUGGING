@@ -3,6 +3,7 @@ package com.example.myapplication.data.repository
 import android.util.Log
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.api.UserInfo
+import com.example.myapplication.data.db.BugDao
 import com.example.myapplication.data.db.CompanyDao
 import com.example.myapplication.data.db.ProductDao
 import com.example.myapplication.data.preference.PreferenceManager
@@ -14,6 +15,7 @@ class UserRepositoryImpl(
     private val preferenceManager: PreferenceManager,
     private val companyDao: CompanyDao,
     private val productDao: ProductDao,
+    private val bugDao: BugDao,
     private val dispatcher: CoroutineDispatcher
 ) : UserRepository {
 
@@ -66,6 +68,7 @@ class UserRepositoryImpl(
         withContext(dispatcher) {
             companyDao.removeCompanyItems()
             productDao.removeProductItems()
+            bugDao.removeBugItems()
         }
     }
 

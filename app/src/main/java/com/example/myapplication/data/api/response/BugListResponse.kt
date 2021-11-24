@@ -13,6 +13,6 @@ data class BugListResponse(
     val success: Boolean? = null,
 
     @SerializedName("data")
-    val bugList: List<BugItem>? = null
+    val data: BugList? = null
 )
 

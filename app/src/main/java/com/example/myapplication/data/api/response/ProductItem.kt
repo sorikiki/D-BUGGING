@@ -25,7 +25,7 @@ data class ProductItem(
     val thumbnail: String? = null,
 
     @SerializedName("interest_num")
-    val interestNum: Int? = null,
+    val interestNum: Int? = 0,
 
     @SerializedName("is_product_interested")
     val isProductInterested: Boolean? = false

@@ -7,7 +7,7 @@ import com.example.myapplication.presentation.BaseView
 
 interface CompanyReservationContract {
     interface View : BaseView<Presenter> {
-        fun processReservationSuccess()
+        fun processReservationSuccess(reservationId: Int)
 
         fun showLoadingIndicator()
 
@@ -15,6 +15,6 @@ interface CompanyReservationContract {
     }
 
     interface Presenter : BasePresenter{
-        fun makeReservation(companyId: ReservationInfo, reservationInfo: ReservationInfo)
+        fun makeReservation(reservationInfo: ReservationInfo)
     }
 }

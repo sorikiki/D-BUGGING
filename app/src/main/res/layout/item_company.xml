@@ -20,18 +20,20 @@
 
     <TextView
         android:id="@+id/tv_company_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="해충 마스터"
         android:textColor="@color/dark_grey"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/ib_interest"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@+id/iv_company_thumb"
-        app:layout_constraintTop_toTopOf="@id/iv_company_thumb" />
+        app:layout_constraintTop_toTopOf="@id/iv_company_thumb"
+        tools:text="해충 마스터" />
 
     <RatingBar
         android:id="@+id/rb_company_grade"
@@ -46,9 +48,8 @@
         android:id="@+id/tv_company_intro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="12sp"
-        android:layout_marginBottom="6dp"
         android:ellipsize="end"
         android:lineSpacingExtra="6sp"
         android:maxLines="2"
@@ -56,11 +57,11 @@
         android:textColor="@color/medium_grey"
         android:textSize="14sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="@id/iv_company_thumb"
         app:layout_constraintEnd_toEndOf="@id/ib_interest"
-        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/tv_company_title"
-        tools:text="바퀴벌레, 좀벌레 등 해충 방역 전문. 바퀴벌레, 좀벌레 등 해충 방역 전문." />
+        app:layout_constraintTop_toBottomOf="@id/tv_company_title"
+        tools:text="바퀴벌레, 좀벌레 등 해충 방역 전문. 바퀴벌레, 좀벌레 등 해충 방역 전문" />
 
     <ImageButton
         android:id="@+id/ib_interest"

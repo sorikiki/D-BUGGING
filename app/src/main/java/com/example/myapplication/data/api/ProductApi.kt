@@ -1,11 +1,11 @@
 package com.example.myapplication.data.api
 
 import com.example.myapplication.data.api.response.ProductListResponse
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
 
 interface ProductApi {
+
     // 제품 목록 요청
     @GET("/product/{user_id}")
     suspend fun getProductList(

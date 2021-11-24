@@ -12,6 +12,8 @@
     <!--    custom grey    -->
     <color name="dark_grey">#333333</color>
     <color name="light_grey">#E9E9E9</color>
+    <color name="turbid_grey">#CCCBCB</color>
+    <color name="white_grey">#F4F4F4</color>
     <color name="medium_grey">#959494</color>
     <color name="greyish_brown">#404040</color>
 

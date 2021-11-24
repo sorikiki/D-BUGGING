@@ -5,10 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [CompanyEntity::class, ProductEntity::class], version=2)
+@Database(entities = [CompanyEntity::class, ProductEntity::class, BugEntity::class], version=1)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun companyDao(): CompanyDao
     abstract fun productDao(): ProductDao
+    abstract fun bugDao(): BugDao
 
     companion object {
         private const val DATABASE_NAME = "d_bugging.db"
