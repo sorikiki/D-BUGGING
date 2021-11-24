@@ -1,7 +1,6 @@
 package com.example.myapplication.presentation.company
 
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -89,7 +88,6 @@ class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.V
                         bugName,
                         firstFoundDate,
                         firstFoundPlace,
-                        hasBugBeenShown,
                         wantedStartDate,
                         wantedEndDate,
                         reserveDateTime,
@@ -104,7 +102,6 @@ class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.V
         bugName: String,
         firstFoundDate: String,
         firstFoundPlace: String,
-        hasBugBeenShown: Boolean,
         wantedStartDate: String,
         wantedEndDate: String,
         reserveDateTime: String,
@@ -117,7 +114,6 @@ class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.V
                 bugName = bugName,
                 firstFoundDate = firstFoundDate,
                 firstFoundPlace = firstFoundPlace,
-                hasBugBeenShown = hasBugBeenShown,
                 wantedStartDate = wantedStartDate,
                 wantedEndDate = wantedEndDate,
                 reserveDateTime = reserveDateTime,
@@ -134,6 +130,7 @@ class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.V
             bundle
         )
     }
+
     override fun showLoadingIndicator() {
         TODO("Not yet implemented")
     }

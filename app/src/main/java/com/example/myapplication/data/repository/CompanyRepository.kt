@@ -17,7 +17,7 @@ interface CompanyRepository {
     // MySQL 에도 변경사항 업데이트
     suspend fun updateRemoteCompanyList()
 
-    suspend fun makeReservation(companyId: Int, reservationInfo: ReservationInfo)
+    suspend fun makeReservation(reservationInfo: ReservationInfo): Int?
 
     suspend fun requestInformation(companyId: Int, reservationId: Int)
 }
