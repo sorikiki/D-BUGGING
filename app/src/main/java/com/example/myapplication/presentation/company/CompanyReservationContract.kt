@@ -1,13 +1,15 @@
 package com.example.myapplication.presentation.company
 
 import com.example.myapplication.data.api.ReservationInfo
+import com.example.myapplication.data.api.UserInfo
 import com.example.myapplication.domain.CompanyInformation
+import com.example.myapplication.domain.UserInformation
 import com.example.myapplication.presentation.BasePresenter
 import com.example.myapplication.presentation.BaseView
 
 interface CompanyReservationContract {
     interface View : BaseView<Presenter> {
-        fun processReservationSuccess()
+        fun processReservationSuccess(reservationId: Int)
 
         fun showLoadingIndicator()
 
@@ -15,6 +17,8 @@ interface CompanyReservationContract {
     }
 
     interface Presenter : BasePresenter{
-        fun makeReservation(companyId: Int, reservationInfo: ReservationInfo)
+        fun getCurrentUserInfo(): UserInformation
+
+        fun makeReservation(reservationInfo: ReservationInfo)
     }
 }

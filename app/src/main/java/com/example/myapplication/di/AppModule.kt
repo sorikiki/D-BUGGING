@@ -125,6 +125,10 @@ val appModule = module {
         scoped<CompanySearchContract.Presenter> { CompanySearchPresenter(get(), getSource()) }
     }
 
+    scope<CompanyReservationFragment> {
+        scoped<CompanyReservationContract.Presenter> { CompanyReservationPresenter(get(), get(), getSource()) }
+    }
+
     scope<ProductListFragment> {
         scoped<ProductListContract.Presenter> { ProductListPresenter(get(), getSource()) }
     }

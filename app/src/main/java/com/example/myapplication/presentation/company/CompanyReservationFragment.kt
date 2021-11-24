@@ -7,38 +7,34 @@ import android.view.ViewGroup
 import android.view.WindowId
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
 import com.example.myapplication.data.api.ReservationInfo
 import com.example.myapplication.databinding.FragmentCompanyReservationBinding
+import com.example.myapplication.domain.CompanyInformation
+import okhttp3.internal.http.hasBody
 import org.koin.android.ext.android.inject
 import org.koin.android.scope.ScopeFragment
 
-class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.View {
+class CompanyReservationFragment : ScopeFragment(), CompanyReservationContract.View {
     private var binding: FragmentCompanyReservationBinding? = null
+
+    lateinit var companyItem: CompanyInformation
 
     override val presenter: CompanyReservationContract.Presenter by inject()
 
     private lateinit var bugName: String
     private lateinit var firstFoundDate: String
     private lateinit var firstFoundPlace: String
-
-    private val numOfRooms by lazy {
-        binding?.etRoomCount?.text.toString().let {
-            if (it.isNotEmpty()) {
-                it.toDouble()
-            } else {
-                null
-            }
-        }
-    }
     private lateinit var wantedStartDate: String
     private lateinit var wantedEndDate: String
     private lateinit var reserveDateTime: String
     private lateinit var extraMessage: String
-
+    val numOfRooms = presenter.getCurrentUserInfo().numOfRooms
+    val userId = presenter.getCurrentUserInfo().userId
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,12 +49,15 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initViews()
         bindViews()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    private fun initViews() {
+        companyItem = arguments?.getParcelable("company")!!
+
     }
+
 
     private fun bindViews() {
         /*binding?.btnSubmit?.setOnClickListener {
@@ -71,19 +70,17 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
                 bugName = etBug.text.toString()
                 firstFoundDate = etFindDate.text.toString()
                 firstFoundPlace = etFindSpot.text.toString()
-                //numOfRooms = etRoomCount.text.toDouble()
-                //wantedStartDate =
-                //wantedEndDate =
+                wantedStartDate = ""
+                wantedEndDate = ""
                 extraMessage = etExtraMessage.text.toString()
 
-                if(bugName.isBlank() && firstFoundDate.isBlank() && firstFoundPlace.isBlank()) {
+                if (bugName.isBlank() && firstFoundDate.isBlank() && firstFoundPlace.isBlank()) {
                     Toast.makeText(context, "필수 입력 내용을 모두 작성해주세요", Toast.LENGTH_SHORT).show()
                 } else {
                     succeedReservation(
                         bugName,
                         firstFoundDate,
                         firstFoundPlace,
-                        //numOfRooms,
                         wantedStartDate,
                         wantedEndDate,
                         reserveDateTime,
@@ -94,6 +91,7 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
         }
     }
 
+    /*
     //radiobuttonclick리스너 사용하기
     fun onRadioButtonClicked(view: View) {
         if (view is RadioButton) {
@@ -113,34 +111,39 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
             }
         }
     }
+     */
 
     fun succeedReservation(
         bugName: String,
         firstFoundDate: String,
         firstFoundPlace: String,
-        numOfRooms: Int? = null,
         wantedStartDate: String,
         wantedEndDate: String,
         reserveDateTime: String,
         extraMessage: String? = null
     ) {
         presenter.makeReservation(
-            companyId = ,
             ReservationInfo(
+                userId = userId!!,
+                companyId = companyItem.companyId!!,
                 bugName = bugName,
                 firstFoundDate = firstFoundDate,
                 firstFoundPlace = firstFoundPlace,
-                //has_bug_been_shown
                 wantedStartDate = wantedStartDate,
                 wantedEndDate = wantedEndDate,
                 reserveDateTime = reserveDateTime,
-                //availableVisitTime = availableVisitTime,
+                availableVisitTime = "",
                 extraMessage = extraMessage
-            ))
+            )
+        )
     }
 
-    override fun processReservationSuccess() {
-        view?.findNavController()?.navigate(R.id.action_companyReservationCheckFragment_to_companyReservationCompletedFragment)
+    override fun processReservationSuccess(reservationId: Int) {
+        val bundle = bundleOf("reservation" to reservationId);
+        view?.findNavController()?.navigate(
+            R.id.action_companyReservationCheckFragment_to_companyReservationCompletedFragment,
+            bundle
+        )
     }
 
     override fun showLoadingIndicator() {
@@ -149,5 +152,9 @@ class CompanyReservationFragment: ScopeFragment(), CompanyReservationContract.Vi
 
     override fun hideLoadingIndicator() {
         TODO("Not yet implemented")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
     }
 }

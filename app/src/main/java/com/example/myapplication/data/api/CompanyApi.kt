@@ -14,18 +14,16 @@ interface CompanyApi {
 
     // 업체 예약
     @Headers("accept: application/json", "content-type: application/json")
-    @POST("/company/{company_id}/reservation")
+    @POST("/company/reservation")
     suspend fun reserveCompany(
-        @Path("company_id") companyId: Int,
         @Body reservationInfo: ReservationInfo
-    ): Call<ReservationResponse>
+    ): Response<ReservationResponse>
 
     // 예약 정보 요청
-    @GET("/company/{company_id}/reservation/{reservation_id}")
+    @GET("/company/reservation/{reservation_id}")
     suspend fun checkCompanyReservation(
-        @Path("company_id") companyId: Int,
         @Path("reservation_id") reservationId: Int
-    ): Call<ReservationCheckResponse>
+    ): Response<ReservationCheckResponse>
 
     // 업체 찜하기 추가
     @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")

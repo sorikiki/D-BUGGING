@@ -64,9 +64,13 @@ class CompanyRepositoryImpl(
             }
     }
 
-    override suspend fun makeReservation(companyId: Int, reservationInfo: ReservationInfo) {
-        val call = companyApi.reserveCompany(companyId, reservationInfo)
+    override suspend fun makeReservation(reservationInfo: ReservationInfo): Int? {
+        return companyApi.reserveCompany(reservationInfo)
+            .body()
+            ?.reservation
+            ?.reservationId
 
+        /*
         call.enqueue(object : retrofit2.Callback<ReservationResponse> {
             override fun onFailure(call: Call<ReservationResponse>, t: Throwable) {
                 Log.d("response", t.toString())
@@ -82,9 +86,11 @@ class CompanyRepositoryImpl(
                 }
             }
         })
+         */
     }
 
     override suspend fun requestInformation(companyId: Int, reservationId : Int) {
+        /*
         val callReserveCompany = companyApi.checkCompanyReservation(companyId, reservationId)
 
         callReserveCompany.enqueue(object : retrofit2.Callback<ReservationCheckResponse> {
@@ -101,6 +107,7 @@ class CompanyRepositoryImpl(
                 Log.d("response", t.toString())
             }
         })
+         */
     }
 
     private fun getCurrentUser(): String? {

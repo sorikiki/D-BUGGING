@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -16,6 +17,8 @@ import com.example.myapplication.domain.CompanyInformation
 
 class CompanyItemFragment: Fragment() {
     private var binding: FragmentCompanyItemBinding? = null
+
+    lateinit var companyItem: CompanyInformation
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +35,7 @@ class CompanyItemFragment: Fragment() {
     }
 
     private fun initViews() {
-        val companyItem = arguments?.getParcelable<CompanyInformation>("company")
+        companyItem = arguments?.getParcelable("company")!!
         binding?.apply {
             tvCompanyName.text = companyItem?.companyName
             tvDescription.text = companyItem?.description
@@ -50,6 +53,7 @@ class CompanyItemFragment: Fragment() {
 
     private fun bindViews() {
         binding?.btReservation?.setOnClickListener {
+            val bundle = bundleOf("company" to companyItem)
             findNavController().navigate(R.id.action_companyItemFragment_to_companyReservationFragment)
         }
     }

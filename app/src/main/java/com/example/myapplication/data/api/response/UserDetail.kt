@@ -3,11 +3,17 @@ package com.example.myapplication.data.api.response
 import com.google.gson.annotations.SerializedName
 
 data class UserDetail(
+    @SerializedName("user_id")
+    val userId: String? = null,
+
     @SerializedName("accumulated_num_of_usages")
     val accumulatedNumOfUsages: Int? = null,
 
     @SerializedName("size_of_house")
     val sizeOfHouse: Double? = null,
+
+    @SerializedName("num_of_rooms")
+    val numOfRooms: Int? = null,
 
     @SerializedName("num_of_interested_companies")
     val numOfInterestedCompanies: Int? = null,

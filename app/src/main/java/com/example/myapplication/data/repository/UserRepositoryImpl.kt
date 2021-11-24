@@ -3,10 +3,12 @@ package com.example.myapplication.data.repository
 import android.util.Log
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.api.UserInfo
+import com.example.myapplication.data.api.response.mapper.toUserInformation
 import com.example.myapplication.data.db.BugDao
 import com.example.myapplication.data.db.CompanyDao
 import com.example.myapplication.data.db.ProductDao
 import com.example.myapplication.data.preference.PreferenceManager
+import com.example.myapplication.domain.UserInformation
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -69,6 +71,15 @@ class UserRepositoryImpl(
             companyDao.removeCompanyItems()
             productDao.removeProductItems()
             bugDao.removeBugItems()
+        }
+    }
+
+    override suspend fun getCurrentUserInfo(): UserInformation? {
+        return getCurrentUserId()?.let {
+            userApi.getUserInformation(it)
+                .body()
+                ?.userDetail
+                ?.toUserInformation()
         }
     }
 
