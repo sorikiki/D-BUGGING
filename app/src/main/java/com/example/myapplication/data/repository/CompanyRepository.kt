@@ -2,7 +2,9 @@ package com.example.myapplication.data.repository
 
 import com.example.myapplication.data.api.CompanyApi
 import com.example.myapplication.data.api.ReservationInfo
+import com.example.myapplication.data.api.response.Reservation
 import com.example.myapplication.domain.CompanyInformation
+import com.example.myapplication.domain.ReservationInformation
 import kotlinx.coroutines.flow.Flow
 
 interface CompanyRepository {
@@ -19,5 +21,5 @@ interface CompanyRepository {
 
     suspend fun makeReservation(reservationInfo: ReservationInfo): Int?
 
-    suspend fun requestInformation(companyId: Int, reservationId: Int)
+    suspend fun requestInformation(reservationId: Int): ReservationInformation?
 }

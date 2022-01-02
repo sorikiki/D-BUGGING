@@ -37,16 +37,15 @@ class CompanyItemFragment: Fragment() {
     private fun initViews() {
         companyItem = arguments?.getParcelable("company")!!
         binding?.apply {
-            tvCompanyName.text = companyItem?.companyName
-            tvDescription.text = companyItem?.description
-            tvAvailableAreas.text = companyItem?.availableArea
-            tvAvailableCounselTime.text = companyItem?.availableCounselTime
-            tvContactNumbers.text = companyItem?.contactNumber
+            tvCompanyName.text = companyItem.companyName
+            tvDescription.text = companyItem.description
+            tvAvailableAreas.text = companyItem.availableArea
+            tvAvailableCounselTime.text = companyItem.availableCounselTime
+            tvContactNumbers.text = companyItem.contactNumber
 
             Glide.with(root)
-                .load(companyItem?.thumbNail)
+                .load(companyItem.thumbNail)
                 .transition(DrawableTransitionOptions.withCrossFade())
-                .transform(CenterCrop())
                 .into(ivCompanyThumb)
         }
     }
@@ -54,7 +53,7 @@ class CompanyItemFragment: Fragment() {
     private fun bindViews() {
         binding?.btReservation?.setOnClickListener {
             val bundle = bundleOf("company" to companyItem)
-            findNavController().navigate(R.id.action_companyItemFragment_to_companyReservationFragment)
+            findNavController().navigate(R.id.action_companyItemFragment_to_companyReservationFragment, bundle)
         }
     }
 

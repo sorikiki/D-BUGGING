@@ -63,11 +63,12 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_search.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_item.xml" value="0.10285714285714286" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_check.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation.xml" value="0.14285714285714285" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_check.xml" value="0.14285714285714285" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_completed.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_search.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_home.xml" value="0.10285714285714286" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_detail_item.xml" value="0.11491228070175438" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_detail_list.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_item.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_main.xml" value="0.125" />

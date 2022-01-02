@@ -35,7 +35,7 @@ class CompanyActivity: AppCompatActivity() {
     private fun initViews() {
         val toolBar = findViewById<Toolbar>(R.id.tool_bar)
         val appBarConfiguration = AppBarConfiguration(
-            topLevelDestinationIds = setOf(R.id.companyListFragment),
+            topLevelDestinationIds = setOf(R.id.companyListFragment, R.id.companyReservationCompletedFragment),
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )
         toolBar.setupWithNavController(navigationController, appBarConfiguration)
