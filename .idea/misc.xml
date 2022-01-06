@@ -28,6 +28,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg2.xml" value="0.13796296296296295" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bug_bg.xml" value="0.10173611111111111" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/circle_bg.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/dot_bg.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/grey_bg.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/home_main_menu_bg.xml" value="0.1006872852233677" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.114453125" />
@@ -46,6 +47,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_silverfish.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_ssal.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/input_bg.xml" value="0.14114583333333333" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/prior_button_bg.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/tag_bg.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_bug.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_company.xml" value="0.1" />
@@ -82,8 +84,8 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_signin.xml" value="0.3828571428571429" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_signup.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_result.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_start.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_result.xml" value="0.14285714285714285" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_survey_start.xml" value="0.12571428571428572" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_bug.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_bug_search.xml" value="0.10234375" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_company.xml" value="0.14285714285714285" />
@@ -92,6 +94,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_product_list.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/main_menu_header.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_item_view.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_list_view.xml" value="0.14285714285714285" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/survey_question_view.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/menu/home_menu.xml" value="0.12571428571428572" />
         <entry key="..\:/d-bugging-project/app/src/main/res/menu/main_menu.xml" value="0.1" />

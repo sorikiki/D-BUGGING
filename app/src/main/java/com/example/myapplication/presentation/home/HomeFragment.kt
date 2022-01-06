@@ -10,8 +10,9 @@ import com.example.myapplication.databinding.FragmentHomeBinding
 import com.example.myapplication.presentation.bug.BugActivity
 import com.example.myapplication.presentation.company.CompanyActivity
 import com.example.myapplication.presentation.product.ProductActivity
+import com.example.myapplication.presentation.survey.SurveyActivity
 
-class HomeFragment: Fragment() {
+class HomeFragment : Fragment() {
     private var binding: FragmentHomeBinding? = null
 
     override fun onCreateView(
@@ -29,6 +30,11 @@ class HomeFragment: Fragment() {
 
     private fun bindViews() {
         binding?.apply {
+            surveyMenu.setOnClickListener {
+                val intent = Intent(context, SurveyActivity::class.java)
+                startActivity(intent)
+            }
+
             reservationMenu.setOnClickListener {
                 val intent = Intent(context, CompanyActivity::class.java)
                 startActivity(intent)
