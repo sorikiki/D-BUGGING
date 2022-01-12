@@ -29,6 +29,7 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bug_bg.xml" value="0.10173611111111111" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/circle_bg.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/dot_bg.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/dot_green_bg.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/grey_bg.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/home_main_menu_bg.xml" value="0.1006872852233677" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.114453125" />
@@ -47,7 +48,9 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_silverfish.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_ssal.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/input_bg.xml" value="0.14114583333333333" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/next_button_bg.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/prior_button_bg.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/submit_button_bg.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/tag_bg.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_bug.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_company.xml" value="0.1" />

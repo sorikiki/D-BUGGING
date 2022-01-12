@@ -1,13 +1,15 @@
 package com.example.myapplication.presentation.survey
 
-import android.annotation.SuppressLint
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentSurveyBinding
 import com.example.myapplication.ext.colorItem
 import com.example.myapplication.ext.conditionItem
@@ -17,8 +19,6 @@ import com.example.myapplication.ext.traitItem
 class SurveyFragment : Fragment() {
     private var binding: FragmentSurveyBinding? = null
     private val listAdapter = SurveyListAdapter()
-    private var currentNumber = 1
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,12 +44,80 @@ class SurveyFragment : Fragment() {
         listAdapter.submitList(listOf(colorItem, movementItem, traitItem, conditionItem))
     }
 
-    @SuppressLint("ResourceAsColor")
     private fun bindViews() {
         binding?.btnNext?.setOnClickListener {
-            if (currentNumber == 1) {
+            binding?.viewPager?.apply {
+                if (currentItem != 3) {
+                    currentItem += 1
+                    binding?.btnNext?.setBackgroundResource(R.drawable.next_button_bg)
+                    binding?.btnNext?.text = "다음"
 
-                binding?.viewPager?.currentItem = currentNumber+1
+                    when (currentItem) {
+                        1 -> {
+                            binding?.ivFirstDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivSecondDot?.setBackgroundResource(R.drawable.dot_green_bg)
+                            binding?.ivThirdDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivFourthDot?.setBackgroundResource(R.drawable.dot_bg)
+                        }
+                        2 -> {
+                            binding?.ivFirstDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivSecondDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivThirdDot?.setBackgroundResource(R.drawable.dot_green_bg)
+                            binding?.ivFourthDot?.setBackgroundResource(R.drawable.dot_bg)
+                        }
+                        3 -> {
+                            binding?.ivFirstDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivSecondDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivThirdDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivFourthDot?.setBackgroundResource(R.drawable.dot_green_bg)
+                            binding?.btnNext?.setBackgroundResource(R.drawable.submit_button_bg)
+                            binding?.btnNext?.text = "제출"
+                        }
+                    }
+                }
+                else {
+                    binding?.btnNext?.setOnClickListener {
+                        view?.findNavController()?.navigate(R.id.action_surveyFragment_to_surveyResultFragment)
+                    }
+                }
+            }
+        }
+
+        binding?.btnPrior?.setOnClickListener {
+            binding?.viewPager?.apply {
+                if (currentItem != 0) {
+                    currentItem -= 1
+                    when (currentItem) {
+                        0 -> {
+                            binding?.ivFirstDot?.setBackgroundResource(R.drawable.dot_green_bg)
+                            binding?.ivSecondDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivThirdDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivFourthDot?.setBackgroundResource(R.drawable.dot_bg)
+                        }
+                        1 -> {
+                            binding?.ivFirstDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivSecondDot?.setBackgroundResource(R.drawable.dot_green_bg)
+                            binding?.ivThirdDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivFourthDot?.setBackgroundResource(R.drawable.dot_bg)
+                        }
+                        2 -> {
+                            binding?.ivFirstDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivSecondDot?.setBackgroundResource(R.drawable.dot_bg)
+                            binding?.ivThirdDot?.setBackgroundResource(R.drawable.dot_green_bg)
+                            binding?.ivFourthDot?.setBackgroundResource(R.drawable.dot_bg)
+                        }
+                    }
+                }
+                if (currentItem != 3) {
+                    binding?.btnNext?.setBackgroundResource(R.drawable.next_button_bg)
+                    binding?.btnNext?.text = "다음"
+                }
+                if (currentItem == 3) {
+                    binding?.btnNext?.setBackgroundResource(R.drawable.submit_button_bg)
+                    binding?.btnNext?.text = "제출"
+                }
+
+
             }
         }
     }

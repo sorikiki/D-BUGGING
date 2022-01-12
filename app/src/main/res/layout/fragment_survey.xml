@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,7 +9,8 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="84dp" />
 
     <ImageView
         android:id="@+id/iv_first_dot"
@@ -16,8 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/dot_bg"
-        android:backgroundTint="@color/turquoise_green"
+        android:background="@drawable/dot_green_bg"
         app:layout_constraintBottom_toTopOf="@id/btn_prior"
         app:layout_constraintEnd_toStartOf="@id/iv_second_dot"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -80,8 +81,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/bg_filter"
-        android:backgroundTint="@color/turbid_grey"
+        android:background="@drawable/next_button_bg"
         android:paddingVertical="14dp"
         android:text="다음"
         android:textColor="@color/white"

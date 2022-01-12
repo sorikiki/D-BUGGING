@@ -28,7 +28,7 @@ class SurveyActivity : AppCompatActivity() {
     private fun initViews() {
         val toolBar = findViewById<Toolbar>(R.id.tool_bar)
         val appBarConfiguration = AppBarConfiguration(
-            topLevelDestinationIds = setOf(R.id.surveyStartFragment),
+            topLevelDestinationIds = setOf(R.id.surveyStartFragment, R.id.surveyResultFragment),
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )
 

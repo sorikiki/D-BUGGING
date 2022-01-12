@@ -21,6 +21,9 @@ import com.example.myapplication.presentation.login.LoginContract
 import com.example.myapplication.presentation.login.LoginPresenter
 import com.example.myapplication.presentation.product.*
 import com.example.myapplication.presentation.register.*
+import com.example.myapplication.presentation.survey.SurveyResultContract
+import com.example.myapplication.presentation.survey.SurveyResultFragment
+import com.example.myapplication.presentation.survey.SurveyResultPresenter
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -158,5 +161,9 @@ val appModule = module {
 
     scope<BugSearchFragment> {
         scoped<BugSearchContract.Presenter> { BugSearchPresenter(get(), getSource()) }
+    }
+
+    scope<SurveyResultFragment> {
+        scoped<SurveyResultContract.Presenter> { SurveyResultPresenter(get(), getSource()) }
     }
 }

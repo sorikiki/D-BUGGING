@@ -8,8 +8,8 @@
         android:id="@+id/surveyFragment"
         android:name="com.example.myapplication.presentation.survey.SurveyFragment">
         <action
-            android:id="@+id/action_surveyFragment_to_surveyResultFragment2"
-            app:destination="@id/surveyResultFragment2" />
+            android:id="@+id/action_surveyFragment_to_surveyResultFragment"
+            app:destination="@id/surveyResultFragment" />
     </fragment>
     <fragment
         android:id="@+id/surveyStartFragment"
@@ -19,6 +19,6 @@
             app:destination="@id/surveyFragment" />
     </fragment>
     <fragment
-        android:id="@+id/surveyResultFragment2"
+        android:id="@+id/surveyResultFragment"
         android:name="com.example.myapplication.presentation.survey.SurveyResultFragment" />
 </navigation>
