@@ -1,7 +1,6 @@
 package com.example.myapplication.di
 
 import android.app.Activity
-import android.util.Log
 import com.example.myapplication.BuildConfig
 import com.example.myapplication.data.api.BugApi
 import com.example.myapplication.data.api.CompanyApi
@@ -22,17 +21,18 @@ import com.example.myapplication.presentation.login.LoginContract
 import com.example.myapplication.presentation.login.LoginPresenter
 import com.example.myapplication.presentation.product.*
 import com.example.myapplication.presentation.register.*
+import com.example.myapplication.presentation.survey.SurveyResultContract
+import com.example.myapplication.presentation.survey.SurveyResultFragment
+import com.example.myapplication.presentation.survey.SurveyResultPresenter
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
-import org.koin.androidx.fragment.dsl.fragment
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
-import retrofit2.http.Url
 
 val appModule = module {
     single { Dispatchers.IO }
@@ -100,7 +100,7 @@ val appModule = module {
 
     // Repository
     single<UserRepository> { UserRepositoryImpl(get(), get(), get(), get(), get(), get()) }
-    single<CompanyRepository> { CompanyRepositoryImpl(get(), get(), get(), get()) }
+    single<CompanyRepository> { CompanyRepositoryImpl(get(), get(), get(), get(), get()) }
     single<ProductRepository> { ProductRepositoryImpl(get(), get(), get(), get()) }
     single<BugRepository> { BugRepositoryImpl(get(), get(), get()) }
 
@@ -126,7 +126,21 @@ val appModule = module {
     }
 
     scope<CompanyReservationFragment> {
-        scoped<CompanyReservationContract.Presenter> { CompanyReservationPresenter(get(), get(), getSource()) }
+        scoped<CompanyReservationContract.Presenter> {
+            CompanyReservationPresenter(
+                get(),
+                getSource()
+            )
+        }
+    }
+
+    scope<CompanyReservationCheckFragment> {
+        scoped<CompanyReservationCheckContract.Presenter> {
+            CompanyReservationCheckPresenter(
+                get(),
+                getSource()
+            )
+        }
     }
 
     scope<ProductListFragment> {
@@ -147,5 +161,9 @@ val appModule = module {
 
     scope<BugSearchFragment> {
         scoped<BugSearchContract.Presenter> { BugSearchPresenter(get(), getSource()) }
+    }
+
+    scope<SurveyResultFragment> {
+        scoped<SurveyResultContract.Presenter> { SurveyResultPresenter(get(), getSource()) }
     }
 }

@@ -3,35 +3,23 @@ package com.example.myapplication.data.api.response
 import com.google.gson.annotations.SerializedName
 
 data class ReservationCheck(
-    @SerializedName("company_name")
-    val companyName: String? = null,
-
     @SerializedName("wanted_date")
     val wantedDate: String? = null,
 
     @SerializedName("wanted_time")
     val wantedTime: String? = null,
 
-    @SerializedName("user_contact_num")
-    val userContactNumber: String? = null,
-
-    @SerializedName("user_address")
-    val userAddress: String? = null,
-
-    @SerializedName("bug_type")
+    @SerializedName("bug_name")
     val bugType: String? = null,
 
-    @SerializedName("found_date")
+    @SerializedName("first_found_date")
     val firstFoundDate: String? = null,
 
-    @SerializedName("found_place")
+    @SerializedName("first_found_place")
     val firstFoundPlace: String? = null,
 
-    @SerializedName("num_of_rooms")
-    val numOfRooms: Int? = null,
-
     @SerializedName("has_bug_been_shown")
-    val hasBugBeenShown: Boolean? = false,
+    val hasBugBeenShown: Int? = 0,
 
     @SerializedName("extra_message")
     val extraMessage: String? = null,
@@ -48,7 +36,7 @@ data class ReservationCheck(
     @SerializedName("engineer_name")
     val engineerName: String? = null,
 
-    @SerializedName("engineer_contact_number")
+    @SerializedName("engineer_num")
     val engineerContactNumber: String? = null,
 
     @SerializedName("expected_estimate")

@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <ImageView
+        android:id="@+id/iv_first_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/dot_green_bg"
+        app:layout_constraintBottom_toTopOf="@id/btn_prior"
+        app:layout_constraintEnd_toStartOf="@id/iv_second_dot"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_second_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/dot_bg"
+        app:layout_constraintBottom_toTopOf="@id/btn_prior"
+        app:layout_constraintEnd_toStartOf="@id/iv_third_dot"
+        app:layout_constraintStart_toEndOf="@id/iv_first_dot" />
+
+    <ImageView
+        android:id="@+id/iv_third_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/dot_bg"
+        app:layout_constraintBottom_toTopOf="@id/btn_prior"
+        app:layout_constraintEnd_toStartOf="@id/iv_fourth_dot"
+        app:layout_constraintStart_toEndOf="@id/iv_second_dot" />
+
+    <ImageView
+        android:id="@+id/iv_fourth_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/dot_bg"
+        app:layout_constraintBottom_toTopOf="@id/btn_prior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_third_dot" />
+
+
+    <Button
+        android:id="@+id/btn_prior"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/prior_button_bg"
+        android:paddingVertical="14dp"
+        android:text="이전"
+        android:textColor="@color/turquoise_green"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_next"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/next_button_bg"
+        android:paddingVertical="14dp"
+        android:text="다음"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_prior" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

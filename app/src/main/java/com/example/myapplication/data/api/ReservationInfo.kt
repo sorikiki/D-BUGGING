@@ -1,7 +1,10 @@
 package com.example.myapplication.data.api
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class ReservationInfo(
     @SerializedName("company_id")
     val companyId: Int,
@@ -9,30 +12,27 @@ data class ReservationInfo(
     @SerializedName("user_id")
     val userId: String,
 
-    @SerializedName("type")
+    @SerializedName("bug_name")
     val bugName: String,
 
-    @SerializedName("found_date")
+    @SerializedName("first_found_date")
     val firstFoundDate: String,
 
-    @SerializedName("found_place")
+    @SerializedName("first_found_place")
     val firstFoundPlace: String,
 
     @SerializedName("has_bug_been_shown")
-    val hasBugBeenShown: Boolean = false,
+    val hasBugBeenShown: Int = 0,
 
-    @SerializedName("wanted_start_date")
-    val wantedStartDate: String,
-
-    @SerializedName("wanted_end_date")
-    val wantedEndDate: String,
+    @SerializedName("wanted_date")
+    val wantedDate: String,
 
     @SerializedName("reserve_date_time")
     val reserveDateTime: String,
 
-    @SerializedName("available_visit_time")
+    @SerializedName("wanted_time")
     val availableVisitTime: String,
 
     @SerializedName("extra_message")
     val extraMessage: String? = null
-)
+): Parcelable

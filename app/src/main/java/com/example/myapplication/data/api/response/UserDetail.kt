@@ -6,6 +6,12 @@ data class UserDetail(
     @SerializedName("user_id")
     val userId: String? = null,
 
+    @SerializedName("user_name")
+    val userName: String? = null,
+
+    @SerializedName("contact_numbers")
+    val contactNumber: String? = null,
+
     @SerializedName("accumulated_num_of_usages")
     val accumulatedNumOfUsages: Int? = null,
 
@@ -14,6 +20,12 @@ data class UserDetail(
 
     @SerializedName("num_of_rooms")
     val numOfRooms: Int? = null,
+
+    @SerializedName("road_address")
+    val roadAddress: String? = null,
+
+    @SerializedName("detail_address")
+    val detailAddress: String? = null,
 
     @SerializedName("num_of_interested_companies")
     val numOfInterestedCompanies: Int? = null,

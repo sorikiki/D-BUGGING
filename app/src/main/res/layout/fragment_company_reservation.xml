@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp">
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/list_not_found"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
     <ScrollView
-        android:id="@+id/scrollView"
+        android:id="@+id/content_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
         android:fillViewport="true"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-23dp"
+        tools:layout_editor_absoluteY="-44dp">
 
 
         <LinearLayout
@@ -65,8 +84,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="2021년 07월 19일"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        tools:text="2021년 07월 19일" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -87,8 +106,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="김유진"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        tools:text="김유진" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -109,8 +128,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="010-1906-0000"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        tools:text="010-1906-0000" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -131,8 +150,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="서울특별시 용산구 청파로 47길 100 (청파동)"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        tools:text="서울특별시 용산구 청파로 47길 100 (청파동)" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -162,11 +181,15 @@
                     android:id="@+id/et_bug"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -189,11 +212,15 @@
                     android:id="@+id/et_find_date"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -216,11 +243,15 @@
                     android:id="@+id/et_find_spot"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -240,15 +271,20 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/et_room_count"
+                <TextView
+                    android:id="@+id/tv_room_count"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="16sp"
+                    tools:text="222" />
 
             </LinearLayout>
 
@@ -269,7 +305,7 @@
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radiogroup"
+                android:id="@+id/has_bug_been_shown_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
@@ -308,13 +344,18 @@
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <EditText
+                    android:id="@+id/tv_wanted_start_year"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="29dp"
@@ -323,13 +364,18 @@
                     android:text="년"
                     android:textSize="18dp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/tv_wanted_start_month"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="29dp"
@@ -338,13 +384,18 @@
                     android:text="월"
                     android:textSize="18dp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/tv_wanted_start_day"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="29dp"
@@ -370,13 +421,18 @@
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <EditText
+                    android:id="@+id/tv_wanted_end_year"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="29dp"
@@ -385,13 +441,18 @@
                     android:text="년"
                     android:textSize="18dp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/tv_wanted_end_month"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="29dp"
@@ -400,13 +461,18 @@
                     android:text="월"
                     android:textSize="18dp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/tv_wanted_end_day"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
                     android:background="@drawable/input_bg"
-                    android:drawablePadding="10dp"
-                    android:ems="10" />
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="29dp"
@@ -434,40 +500,52 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <CheckBox
+            <RadioGroup
+                android:id="@+id/wanted_time_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:text="언제든 좋아요. 최대한 빨리 와주세요." />
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="09:00 AM - 12:00 PM" />
+                <RadioButton
+                    android:id="@+id/rb_anytime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:text="언제든 좋아요. 최대한 빨리 와주세요." />
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="13:00 AM - 16:00 PM" />
+                <RadioButton
+                    android:id="@+id/rb_9_to_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="09:00 AM - 12:00 PM" />
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="16:00 AM - 19:00 PM" />
+                <RadioButton
+                    android:id="@+id/rb_13_to_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="13:00 AM - 16:00 PM" />
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="19:00 AM - 22:00 PM" />
+                <RadioButton
+                    android:id="@+id/rb_16_to_19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="16:00 AM - 19:00 PM" />
+
+                <RadioButton
+                    android:id="@+id/rb_19_to_22"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="19:00 AM - 22:00 PM" />
+            </RadioGroup>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -482,13 +560,13 @@
                 android:id="@+id/et_extra_message"
                 android:layout_width="match_parent"
                 android:layout_height="114dp"
-                android:layout_gravity="left"
                 android:layout_marginTop="20dp"
                 android:backgroundTintMode="multiply"
-                android:drawablePadding="10dp"
                 android:ems="10"
                 android:gravity="top"
-                android:hint="예) 되도록 주말은 피해주세요" />
+                android:hint="예) 되도록 주말은 피해주세요"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
 
             <Button
                 android:id="@+id/btn_submit"
@@ -503,4 +581,4 @@
 
         </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
