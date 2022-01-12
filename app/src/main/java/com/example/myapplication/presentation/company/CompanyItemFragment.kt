@@ -54,7 +54,7 @@ class CompanyItemFragment: Fragment() {
     private fun bindViews() {
         binding?.btReservation?.setOnClickListener {
             val bundle = bundleOf("company" to companyItem)
-            findNavController().navigate(R.id.action_companyItemFragment_to_companyReservationFragment)
+            findNavController().navigate(R.id.action_companyItemFragment_to_companyReservationFragment, bundle)
         }
     }
 
