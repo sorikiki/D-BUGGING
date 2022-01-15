@@ -7,4 +7,8 @@ interface BugRepository {
     val bugs: Flow<List<BugInformation>>
 
     suspend fun refreshBugs()
+
+    suspend fun doSurvey(bugId: Int, userId: String): BugInformation?
+
+    suspend fun requestSurveyResult(bugInformation: BugInformation): Int?
 }

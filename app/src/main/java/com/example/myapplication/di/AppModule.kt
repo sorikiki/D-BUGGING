@@ -22,7 +22,7 @@ import com.example.myapplication.presentation.login.LoginPresenter
 import com.example.myapplication.presentation.product.*
 import com.example.myapplication.presentation.register.*
 import com.example.myapplication.presentation.survey.SurveyResultContract
-import com.example.myapplication.presentation.survey.SurveyResultFragment
+import com.example.myapplication.presentation.survey.surveyResultFragment
 import com.example.myapplication.presentation.survey.SurveyResultPresenter
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
@@ -163,7 +163,7 @@ val appModule = module {
         scoped<BugSearchContract.Presenter> { BugSearchPresenter(get(), getSource()) }
     }
 
-    scope<SurveyResultFragment> {
+    scope<surveyResultFragment> {
         scoped<SurveyResultContract.Presenter> { SurveyResultPresenter(get(), getSource()) }
     }
 }

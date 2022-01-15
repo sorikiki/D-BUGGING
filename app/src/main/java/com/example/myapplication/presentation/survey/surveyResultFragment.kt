@@ -11,7 +11,7 @@ import com.example.myapplication.databinding.FragmentSurveyResultBinding
 import com.example.myapplication.presentation.bug.BugListContract
 import org.koin.android.scope.ScopeFragment
 
-class SurveyResultFragment : ScopeFragment(), SurveyResultContract.View {
+class surveyResultFragment : ScopeFragment(), SurveyResultContract.View {
     private var binding: FragmentSurveyResultBinding? = null
 
     override val presenter: SurveyResultContract.Presenter by inject()

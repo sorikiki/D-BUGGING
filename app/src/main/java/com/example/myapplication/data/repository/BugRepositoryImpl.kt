@@ -1,7 +1,9 @@
 package com.example.myapplication.data.repository
 
+import android.view.WindowId
 import com.example.myapplication.data.api.BugApi
 import com.example.myapplication.data.api.response.mapper.toBugEntity
+import com.example.myapplication.data.api.response.mapper.toBugInformation
 import com.example.myapplication.data.db.BugDao
 import com.example.myapplication.data.db.toBugInformation
 import com.example.myapplication.domain.BugInformation
@@ -33,5 +35,19 @@ class BugRepositoryImpl(
                         .let { bugDao.insertBugList(it) }
                 }
             }
+    }
+
+    override suspend fun doSurvey(bugId: Int, userId: String): BugInformation? {
+        return bugApi.addSurveyResult(bugId, userId)
+            .body()
+            ?.bugItem
+            ?.toBugInformation()
+    }
+
+    override suspend fun requestSurveyResult(bugInformation: BugInformation): Int? {
+        return bugApi.getSurveyResult(bugInformation)
+            .body()
+            ?.bugInformation
+            ?.bugId
     }
 }
