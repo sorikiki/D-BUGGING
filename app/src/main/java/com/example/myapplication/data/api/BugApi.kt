@@ -11,15 +11,11 @@ interface BugApi {
     suspend fun getBugList(): Response<BugListResponse>
 
     // 설문 결과 추가
-    @POST("/bug/{bug_id}")
+    @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")
+    @FormUrlEncoded
+    @POST("/bug/survey")
     suspend fun addSurveyResult(
-        @Path("bug_id") bugId: Int,
+        @Field("bug_id") bugId: Int,
         @Field("user_id") userId: String
-    ): Response<BugItemResponse>
-
-    // 설문 결과 조회
-    @GET("/bug/{bug_id}/survey")
-    suspend fun getSurveyResult(
-        @Body bugInformation: BugInformation
-    ): Response<SurveyItemResponse>
+    ): BugItemResponse
 }

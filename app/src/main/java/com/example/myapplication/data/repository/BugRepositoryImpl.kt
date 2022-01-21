@@ -37,17 +37,9 @@ class BugRepositoryImpl(
             }
     }
 
-    override suspend fun doSurvey(bugId: Int, userId: String): BugInformation? {
+    override suspend fun getButItem(bugId: Int, userId: String): BugInformation? {
         return bugApi.addSurveyResult(bugId, userId)
-            .body()
-            ?.bugItem
+            .data
             ?.toBugInformation()
-    }
-
-    override suspend fun requestSurveyResult(bugInformation: BugInformation): Int? {
-        return bugApi.getSurveyResult(bugInformation)
-            .body()
-            ?.bugInformation
-            ?.bugId
     }
 }

@@ -13,5 +13,5 @@ data class BugItemResponse (
     val success: Boolean? = null,
 
     @SerializedName("data")
-    val bugItem: BugItem? = null
+    val data: BugItem? = null
 )

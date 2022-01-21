@@ -8,7 +8,5 @@ interface BugRepository {
 
     suspend fun refreshBugs()
 
-    suspend fun doSurvey(bugId: Int, userId: String): BugInformation?
-
-    suspend fun requestSurveyResult(bugInformation: BugInformation): Int?
+    suspend fun getButItem(bugId: Int, userId: String): BugInformation?
 }
