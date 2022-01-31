@@ -100,26 +100,50 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <!--                    <TextView-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:layout_marginTop="24dp"-->
-                    <!--                        android:layout_marginBottom="8dp"-->
-                    <!--                        android:gravity="center"-->
-                    <!--                        android:text="흰색 또는 은색이에요"-->
-                    <!--                        android:textColor="@color/greyish_brown"-->
-                    <!--                        android:textSize="13sp"-->
-                    <!--                        android:textStyle="bold" />-->
+                    <TextView
+                        android:id="@+id/tv_appearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="흰색 또는 은색이에요"
+                        android:textColor="@color/greyish_brown"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
-                    <!--                    <TextView-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:layout_marginBottom="8dp"-->
-                    <!--                        android:gravity="center"-->
-                    <!--                        android:text="흰색 또는 은색이에요"-->
-                    <!--                        android:textColor="@color/greyish_brown"-->
-                    <!--                        android:textSize="13sp"-->
-                    <!--                        android:textStyle="bold" />-->
+                    <TextView
+                        android:id="@+id/tv_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="흰색 또는 은색이에요"
+                        android:textColor="@color/greyish_brown"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_bug_habitat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="흰색 또는 은색이에요"
+                        android:textColor="@color/greyish_brown"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_bug_movement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="흰색 또는 은색이에요"
+                        android:textColor="@color/greyish_brown"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 

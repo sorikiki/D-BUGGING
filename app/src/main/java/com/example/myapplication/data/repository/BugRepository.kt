@@ -4,9 +4,7 @@ import com.example.myapplication.domain.BugInformation
 import kotlinx.coroutines.flow.Flow
 
 interface BugRepository {
-    val bugs: Flow<List<BugInformation>>
-
     suspend fun refreshBugs()
 
-    suspend fun getButItem(bugId: Int, userId: String): BugInformation?
+    suspend fun getBugInfo(bugId: Int, userId: String): BugInformation?
 }

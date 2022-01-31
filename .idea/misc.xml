@@ -8,9 +8,15 @@
         <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/activity_mypage.xml" value="0.1" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/activity_register_completed.xml" value="0.22" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_bug_item.xml" value="0.22" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_company_reservation.xml" value="0.22" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_company_reservation_check.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_home.xml" value="0.1421875" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_product_list.xml" value="0.12907608695652173" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_register.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_register_completed.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_survey_result.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_survey_result.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/D-BUGGING/app/src/main/res/layout/fragment_survey_start.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/drawable/bg_bug_list.xml" value="0.1" />
         <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/drawable/bg_filter.xml" value="0.1" />
         <entry key="..\:/Users/wpdld/Android-DBugging/D-BUGGING1/app/src/main/res/drawable/btn2_bg.xml" value="0.1" />

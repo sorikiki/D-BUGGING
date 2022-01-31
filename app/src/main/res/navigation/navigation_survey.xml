@@ -20,5 +20,5 @@
     </fragment>
     <fragment
         android:id="@+id/surveyResultFragment"
-        android:name="com.example.myapplication.presentation.survey.surveyResultFragment" />
+        android:name="com.example.myapplication.presentation.survey.SurveyResultFragment" />
 </navigation>
