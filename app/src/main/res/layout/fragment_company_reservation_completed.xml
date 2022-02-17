@@ -40,27 +40,27 @@
         android:layout_marginBottom="100dp"
         android:text="마이페이지에서 예약 및 진행 현황을 볼 수 있어요"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_check"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/btn_check"
+        android:id="@+id/btn_home"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/bg_filter"
-        android:text="확인"
+        android:text="홈으로"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_my_page"
+        app:layout_constraintEnd_toEndOf="@+id/btn_my_page"
+        app:layout_constraintStart_toStartOf="@+id/btn_my_page" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_my_page"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="27dp"

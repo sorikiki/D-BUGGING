@@ -1,6 +1,5 @@
 package com.example.myapplication.data.repository
 
-import android.util.Log
 import com.example.myapplication.data.api.UserApi
 import com.example.myapplication.data.api.UserInfo
 import com.example.myapplication.data.api.response.mapper.toUserInformation
@@ -22,38 +21,36 @@ class UserRepositoryImpl(
 ) : UserRepository {
 
     override suspend fun registerUser(userInfo: UserInfo) {
-        //todo userApi 의 회원가입 함수 호출
         userApi.signUpUser(userInfo)
     }
 
     override suspend fun processLogIn(id: String, password: String): Boolean {
-        var loginSucceed = false
+        var logInSucceed: Boolean
 
         userApi.signInUser(id, password)
             .body()
+            ?.user
             .also { response ->
-                Log.d("response", response.toString())
-                if (response != null) {
-                    val currentUserId = response.currentUser?.userId
-                    val currentUserName = response.currentUser?.userName
+                val currentUserId = response?.userId
+                val currentUserName = response?.userName
 
-                    if (currentUserId != null) {
-                        if (currentUserName != null) {
-                            preferenceManager.putUserInfo(currentUserId, currentUserName)
-                        }
+                if (currentUserId != null) {
+                    if (currentUserName != null) {
+                        preferenceManager.putUserInfo(currentUserId, currentUserName)
                     }
-
-                    loginSucceed = response.success ?: false
                 }
+
+                logInSucceed = true
             }
-        return loginSucceed
+
+        return logInSucceed
     }
 
-    override fun getCurrentUserId(): String? {
+    override fun getPreferenceUserId(): String? {
         return preferenceManager.getUserId()
     }
 
-    override fun getCurrentUserName(): String? {
+    override fun getPreferenceUserName(): String? {
         return preferenceManager.getUserName()
     }
 
@@ -75,7 +72,7 @@ class UserRepositoryImpl(
     }
 
     override suspend fun getCurrentUserInfo(): UserInformation? {
-        return getCurrentUserId()?.let {
+        return getPreferenceUserId()?.let {
             userApi.getUserInformation(it)
                 .body()
                 ?.userDetail

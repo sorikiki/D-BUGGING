@@ -1,7 +1,6 @@
 package com.example.myapplication.presentation.bug
 
 import android.os.Bundle
-import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +9,9 @@ import android.widget.TextView
 import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.myapplication.R
-import com.example.myapplication.data.api.response.BugItem
 import com.example.myapplication.databinding.FragmentBugItemBinding
 import com.example.myapplication.domain.BugInformation
-import com.example.myapplication.domain.CompanyInformation
 import com.example.myapplication.ext.*
 
 class BugItemFragment : Fragment() {

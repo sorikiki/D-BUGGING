@@ -23,6 +23,16 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable-v24/round_2.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_bug_list.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_filter.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_grey_15dp.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_grey_circle.xml" value="0.12149122807017544" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_mypage_bug_bg.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_mypage_bug_description_bg.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_mypage_product_bg.xml" value="0.12105263157894737" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_mypage_product_description_bg.xml" value="0.12105263157894737" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_mypage_reservation_description_bg.xml" value="0.1074561403508772" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_mypage_reservation_title_bg.xml" value="0.1074561403508772" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_mypage_reservation_title_gray_bg.xml" value="0.12149122807017544" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/bg_user_circle.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn2_bg.xml" value="0.10173611111111111" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/btn_bg2.xml" value="0.13796296296296295" />
@@ -40,18 +50,26 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.1006872852233677" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_baseline_security_24.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_bedbug.xml" value="0.114453125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_check_circle.xml" value="0.12149122807017544" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_chevron_right.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_clipboard.xml" value="0.12149122807017544" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_cockroach.xml" value="0.114453125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_done.xml" value="0.12149122807017544" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_edit_3.xml" value="0.12149122807017544" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_heart_fill.xml" value="0.10173611111111111" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_heart_line.xml" value="0.10173611111111111" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1006872852233677" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_millipede.xml" value="0.102734375" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_silverfish.xml" value="0.114453125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_ssal.xml" value="0.114453125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/ic_user.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/input_bg.xml" value="0.14114583333333333" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/next_button_bg.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/prior_button_bg.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/submit_button_bg.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/drawable/tag_bg.xml" value="0.114453125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/test.xml" value="0.10614035087719298" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/drawable/test2.xml" value="0.10614035087719298" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_bug.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_company.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_home.xml" value="0.1" />
@@ -62,23 +80,26 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_register.xml" value="0.10285714285714286" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_register_completed.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_survey.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/activity_test.xml" value="0.2857142857142857" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/company_item.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_item.xml" value="0.12571428571428572" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_list.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_bug_search.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_item.xml" value="0.10285714285714286" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation.xml" value="0.14285714285714285" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation.xml" value="0.12571428571428572" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_check.xml" value="0.14285714285714285" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_completed.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_reservation_completed.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_company_search.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_home.xml" value="0.10285714285714286" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_detail_item.xml" value="0.11491228070175438" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_detail_item.xml" value="0.14285714285714285" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_detail_list.xml" value="0.125" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_company_item.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_main.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_main.xml" value="0.18857142857142858" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_product_interest_item.xml" value="0.18857142857142858" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_product_interest_list.xml" value="0.125" />
-        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_survey_detail_list.xml" value="0.125" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_survey_detail_item.xml" value="0.12571428571428572" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_mypage_survey_detail_list.xml" value="0.14285714285714285" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_item.xml" value="0.14285714285714285" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_list.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/fragment_product_search.xml" value="0.10234375" />
@@ -93,6 +114,13 @@
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_bug_search.xml" value="0.10234375" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_company.xml" value="0.14285714285714285" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_company_list.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_mypage_company.xml" value="0.18857142857142858" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_mypage_product.xml" value="0.14285714285714285" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_mypage_product_detail.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_mypage_reservation.xml" value="0.1" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_mypage_reservation_detail.xml" value="0.12571428571428572" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_mypage_survey.xml" value="0.18857142857142858" />
+        <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_mypage_survey_detail.xml" value="0.18857142857142858" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_product.xml" value="0.10234375" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/item_product_list.xml" value="0.1" />
         <entry key="..\:/d-bugging-project/app/src/main/res/layout/main_menu_header.xml" value="0.1" />

@@ -14,7 +14,9 @@ fun UserDetail.toUserInformation() =
         roadAddress,
         detailAddress,
         numOfInterestedCompanies,
-        surveyList,
-        productList,
-        companyList
+        zipCode,
+        surveyList?.toSurveyInformation(),
+        productList?.toProductInformation(),
+        reservationList?.toReservationInformation()
 )
+

@@ -22,4 +22,6 @@ interface CompanyRepository {
     suspend fun makeReservation(reservationInfo: ReservationInfo): Int?
 
     suspend fun requestInformation(reservationId: Int): ReservationInformation?
+
+    suspend fun requestNumberOfReservations(userId: String): Int?
 }

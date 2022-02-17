@@ -5,6 +5,27 @@ import android.util.TypedValue
 import com.example.myapplication.R
 import com.example.myapplication.domain.BugInformation
 
+fun bugIdToDrawable(bugId: Int): Int {
+    return when (bugId) {
+        // 좀벌레
+        1 -> R.drawable.ic_silverfish
+        // 먼지다듬이
+        2 -> R.drawable.ic_dust
+        // 바퀴벌레
+        3 -> R.drawable.ic_cockroach
+        // 화랑곡나방
+        4 -> R.drawable.ic_moth
+        // 쌀바구미
+        5 -> R.drawable.ic_ssal
+        // 그리마
+        6 -> R.drawable.ic_millipede
+        // 빈대
+        7 -> R.drawable.ic_bedbug
+        // 모기
+        else -> R.drawable.ic_mosquito
+    }
+}
+
 fun BugInformation.toDrawable(): Int {
     return when (bugId) {
         // 좀벌레

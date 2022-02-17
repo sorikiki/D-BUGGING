@@ -9,7 +9,9 @@
         android:name="com.example.myapplication.presentation.survey.SurveyFragment">
         <action
             android:id="@+id/action_surveyFragment_to_surveyResultFragment"
-            app:destination="@id/surveyResultFragment" />
+            app:destination="@id/surveyResultFragment"
+            app:popUpTo="@id/surveyFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/surveyStartFragment"

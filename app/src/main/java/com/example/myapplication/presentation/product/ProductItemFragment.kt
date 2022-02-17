@@ -52,7 +52,7 @@ class ProductItemFragment : ScopeFragment(), ProductItemContract.View {
     }
 
     private fun initViews() {
-        productItem = arguments?.getParcelable<ProductInformation>("product")
+        productItem = arguments?.getParcelable("product")
         binding?.apply {
             Glide.with(root)
                 .load(productItem?.thumbnail)

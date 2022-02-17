@@ -1,10 +1,11 @@
 package com.example.myapplication.data.api.response.mapper
 
-import com.example.myapplication.data.api.response.ReservationCheck
+import com.example.myapplication.data.api.response.ReservationDetail
 import com.example.myapplication.domain.ReservationInformation
 
-fun ReservationCheck.toReservationInformation(): ReservationInformation =
+fun ReservationDetail.toReservationInformation(): ReservationInformation =
     ReservationInformation(
+        reservationId = reservationId,
         wantedDate = wantedDate,
         wantedTime = wantedTime,
         bugType = bugType,
@@ -17,5 +18,13 @@ fun ReservationCheck.toReservationInformation(): ReservationInformation =
         visitDateTime = visitDateTime,
         engineerName = engineerName,
         engineerContactNumber = engineerContactNumber,
-        expectedEstimate = expectedEstimate
+        expectedEstimate = expectedEstimate,
+        companyName = companyName,
+        userId = userId,
+        companyId = companyId,
+        confirmDateTime = confirmDateTime,
+        reserveCompletedDateTime = reserveCompletedDateTime
     )
+
+fun List<ReservationDetail>.toReservationInformation(): List<ReservationInformation> =
+    map { it.toReservationInformation() }

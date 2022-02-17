@@ -134,7 +134,7 @@ class RegisterFragment : ScopeFragment(), RegisterContract.View {
     }
 
 
-    fun succeedSignUp(
+    private fun succeedSignUp(
         name: String,
         id: String,
         password: String,

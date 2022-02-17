@@ -10,9 +10,9 @@ interface UserRepository {
 
     suspend fun clearUser(id : String)
 
-    fun getCurrentUserId(): String?
+    fun getPreferenceUserId(): String?
 
-    fun getCurrentUserName(): String?
+    fun getPreferenceUserName(): String?
 
     suspend fun logOutUser()
 

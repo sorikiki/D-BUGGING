@@ -18,7 +18,7 @@ interface CompanyReservationContract {
         fun setUserInfoVisible(userInfo: UserInformation?)
     }
 
-    interface Presenter : BasePresenter{
+    interface Presenter : BasePresenter {
         val currentUser: UserInformation?
 
         fun getUserInfo(reservationInfo: ReservationInfo)

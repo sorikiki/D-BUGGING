@@ -13,5 +13,5 @@ data class UserResponse(
     val success: Boolean? = null,
 
     @SerializedName("data")
-    val currentUser: CurrentUser? = null
+    val user: User? = null
 )

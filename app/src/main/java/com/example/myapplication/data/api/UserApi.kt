@@ -29,26 +29,9 @@ interface UserApi {
     )
 
     // 마이페이지 메인 정보 조회
-    @GET("/user/{user_id}")
+    @GET("/user/mypage/{user_id}")
     suspend fun getUserInformation(
         @Path("user_id") id: String
     ): Response<UserDetailResponse>
 
-    // 마이페이지 나의 설문 더보기
-    @GET("/user/survey")
-    suspend fun getUserSurveyDetail(
-        @Query("user_id") id: String
-    ): Response<MyPageSurveyDetailResponse>
-
-    // 마이페이지 찜한 퇴치법 더보기
-    @GET("/user/product")
-    suspend fun getUserProductDetail(
-        @Query("user_id") id: String
-    ): Response<MyPageProductDetailResponse>
-
-    // 마이페이지 나의 업체 이용 더보기
-    @GET("/user/company")
-    suspend fun getMyPageCompanyDetail(
-        @Query("user_id") id: String
-    ): Response<MyPageReservationDetailResponse>
 }

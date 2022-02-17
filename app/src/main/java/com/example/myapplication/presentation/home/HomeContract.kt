@@ -10,12 +10,16 @@ interface HomeContract {
         fun showLoadingIndicator()
 
         fun hideLoadingIndicator()
+
+        fun showAccumulatedNumberOfReservations(number: Int?)
     }
 
     interface Presenter : BasePresenter {
         fun setCurrentUserId(): String
 
         fun setCurrentUserName(): String
+
+        fun setAccumulatedNumberOfReservations()
 
         fun logOutUser()
 

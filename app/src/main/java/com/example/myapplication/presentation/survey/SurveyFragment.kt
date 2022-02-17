@@ -2,10 +2,12 @@ package com.example.myapplication.presentation.survey
 
 import android.graphics.Rect
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -41,12 +43,37 @@ class SurveyFragment : Fragment() {
             binding?.viewPager?.isUserInputEnabled = false
             addItemDecoration(GridLayoutSpacingDecoration())
         }
+
+        colorItem.keyWords?.forEach { item ->
+            item.isSelected = false
+        }
+
+        movementItem.keyWords?.forEach { item ->
+            item.isSelected = false
+        }
+
+        traitItem.keyWords?.forEach { item ->
+            item.isSelected = false
+        }
+
+        conditionItem.keyWords?.forEach { item ->
+            item.isSelected = false
+        }
+
         listAdapter.submitList(listOf(colorItem, movementItem, traitItem, conditionItem))
     }
 
     private fun bindViews() {
         binding?.btnNext?.setOnClickListener {
+
             binding?.viewPager?.apply {
+                if (currentItem == 3) {
+                    // 랜덤으로 벌레 정보 가져오기
+                    val bundle = bundleOf("bugId" to (1..8).random(), "isAddingSurveyItem" to true)
+                    view?.findNavController()
+                        ?.navigate(R.id.action_surveyFragment_to_surveyResultFragment, bundle)
+                }
+
                 if (currentItem != 3) {
                     currentItem += 1
                     binding?.btnNext?.setBackgroundResource(R.drawable.next_button_bg)
@@ -73,11 +100,6 @@ class SurveyFragment : Fragment() {
                             binding?.btnNext?.setBackgroundResource(R.drawable.submit_button_bg)
                             binding?.btnNext?.text = "제출"
                         }
-                    }
-                }
-                else {
-                    binding?.btnNext?.setOnClickListener {
-                        view?.findNavController()?.navigate(R.id.action_surveyFragment_to_surveyResultFragment)
                     }
                 }
             }

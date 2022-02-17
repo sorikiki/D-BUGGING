@@ -12,7 +12,8 @@
             app:destination="@id/productItemFragment" />
         <action
             android:id="@+id/action_productListFragment_to_productSearchFragment"
-            app:destination="@id/productSearchFragment" />
+            app:destination="@id/productSearchFragment"
+            app:popUpTo="@id/productListFragment" />
     </fragment>
     <fragment
         android:id="@+id/productItemFragment"

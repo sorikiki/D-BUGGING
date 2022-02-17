@@ -19,6 +19,7 @@ import com.example.myapplication.presentation.home.HomePresenter
 import com.example.myapplication.presentation.login.LoginActivity
 import com.example.myapplication.presentation.login.LoginContract
 import com.example.myapplication.presentation.login.LoginPresenter
+import com.example.myapplication.presentation.mypage.*
 import com.example.myapplication.presentation.product.*
 import com.example.myapplication.presentation.register.*
 import com.example.myapplication.presentation.survey.SurveyResultContract
@@ -164,6 +165,10 @@ val appModule = module {
     }
 
     scope<SurveyResultFragment> {
-        scoped<SurveyResultContract.Presenter> { SurveyResultPresenter(get(), getSource()) }
+        scoped<SurveyResultContract.Presenter> { SurveyResultPresenter(get(), get(), getSource()) }
+    }
+
+    scope<MyPageMainFragment> {
+        scoped<MyPageMainContract.Presenter> { MyPageMainPresenter(get(), getSource()) }
     }
 }

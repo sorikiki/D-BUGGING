@@ -1,7 +1,6 @@
 package com.example.myapplication.data.api
 
 import com.example.myapplication.data.api.response.*
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -23,7 +22,7 @@ interface CompanyApi {
     @GET("/company/reservation/{reservation_id}")
     suspend fun checkCompanyReservation(
         @Path("reservation_id") reservationId: Int
-    ): Response<ReservationCheckResponse>
+    ): Response<ReservationDetailResponse>
 
     // 업체 찜하기 추가
     @Headers("accept: application/json", "content-type: application/x-www-form-urlencoded")

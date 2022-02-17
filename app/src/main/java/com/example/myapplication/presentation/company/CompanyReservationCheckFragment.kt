@@ -5,15 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
 import com.example.myapplication.data.api.ReservationInfo
-import com.example.myapplication.data.api.response.CompanyItem
-import com.example.myapplication.data.api.response.CurrentUser
 import com.example.myapplication.databinding.FragmentCompanyReservationCheckBinding
 import com.example.myapplication.domain.CompanyInformation
-import com.example.myapplication.domain.ReservationInformation
 import com.example.myapplication.domain.UserInformation
 import org.koin.android.scope.ScopeFragment
 
@@ -52,6 +49,10 @@ class CompanyReservationCheckFragment : ScopeFragment(), CompanyReservationCheck
         binding?.btnSubmit?.setOnClickListener {
             presenter.makeReservation(reservationInfo, companyInfo, currentUser)
         }
+
+        binding?.btnAmend?.setOnClickListener {
+            view?.findNavController()?.navigateUp()
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -65,7 +66,7 @@ class CompanyReservationCheckFragment : ScopeFragment(), CompanyReservationCheck
             val visitDate = reservationInfo?.wantedDate?.split("-")
             tvVisitDateStart.text = visitDate?.get(0).plus("-")
             tvVisitDateEnd.text = visitDate?.get(1)
-            tvVisitTime.text = reservationInfo?.availableVisitTime.toString() //
+            tvVisitTime.text = reservationInfo?.availableVisitTime.toString()
             tvApplicant.text = currentUser?.userName
             tvContact.text = currentUser?.contactNumber
             tvVisitAddress.text = "${currentUser?.roadAddress} ${currentUser?.detailAddress}"

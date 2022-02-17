@@ -2,7 +2,7 @@ package com.example.myapplication.data.api.response
 
 import com.google.gson.annotations.SerializedName
 
-data class MyPageSurveyDetailResponse(
+data class BugItemResponse (
     @SerializedName("message")
     val message: String? = null,
 
@@ -12,6 +12,6 @@ data class MyPageSurveyDetailResponse(
     @SerializedName("success")
     val success: Boolean? = null,
 
-    @SerializedName("survey_list")
-    val surveyList: List<SurveyItem>? = null
+    @SerializedName("data")
+    val data: BugItem? = null
 )

@@ -74,8 +74,15 @@ class CompanyRepositoryImpl(
 
         return companyApi.checkCompanyReservation(reservationId)
             .body()
-            ?.reservationCheck
+            ?.reservationDetail
             ?.toReservationInformation()
+    }
+
+    override suspend fun requestNumberOfReservations(userId: String): Int? {
+        return userApi.getUserInformation(userId)
+            .body()
+            ?.userDetail
+            ?.accumulatedNumOfUsages
     }
 
     private fun getCurrentUserId(): String? {

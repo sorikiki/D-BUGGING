@@ -44,6 +44,8 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
 
         initViews(currentUserName)
         bindViews(currentUserId)
+
+        presenter.onViewCreated()
     }
 
     @SuppressLint("SetTextI18n")
@@ -61,13 +63,11 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
             }
         }
 
-
         navigationDrawer.getHeaderView(0).apply {
             layoutParams.width = navigationDrawer.layoutParams.width
         }
 
     }
-
 
     private fun bindViews(currentUserId: String) {
         findViewById<TextView>(R.id.tv_log_out).setOnClickListener {
@@ -96,6 +96,13 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
 
         navigationDrawer.setNavigationItemSelectedListener { menu ->
             when (menu.itemId) {
+
+                R.id.surveyActivity -> {
+                    val intent = Intent(this, SurveyActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
                 R.id.companyActivity -> {
                     val intent = Intent(this, CompanyActivity::class.java)
                     startActivity(intent)
@@ -119,6 +126,11 @@ class HomeActivity : ScopeActivity(), HomeContract.View {
                 else -> true
             }
         }
+    }
+
+    @SuppressLint("SetTextI18n")
+    override fun showAccumulatedNumberOfReservations(number: Int?) {
+        navigationDrawer.getHeaderView(0).findViewById<TextView>(R.id.tv_num_of_acccumulated_usages).text = "누적 업체 이용 ${number}건"
     }
 
     override fun moveToLoginScreen() {

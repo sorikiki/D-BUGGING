@@ -30,12 +30,15 @@ data class UserDetail(
     @SerializedName("num_of_interested_companies")
     val numOfInterestedCompanies: Int? = null,
 
+    @SerializedName("zip_code")
+    val zipCode: Int? = null,
+
     @SerializedName("survey_list")
     val surveyList: List<SurveyItem>? = null,
 
     @SerializedName("product_list")
-    val productList: List<ProductItem>?= null,
+    val productList: List<ProductItem>? = null,
 
-    @SerializedName("company_list")
-    val companyList: List<ReservationItem>?= null
+    @SerializedName("reservation_list")
+    val reservationList: List<ReservationDetail>? = null
 )

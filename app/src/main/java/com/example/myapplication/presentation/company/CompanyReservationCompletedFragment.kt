@@ -32,7 +32,7 @@ class CompanyReservationCompletedFragment: Fragment() {
     }
 
     private fun bindViews() {
-        binding?.btnCheck?.setOnClickListener {
+        binding?.btnHome?.setOnClickListener {
             val intent = Intent(context, HomeActivity::class.java)
             startActivity(intent)
         }

@@ -1,9 +1,7 @@
 package com.example.myapplication.domain
 
 import android.os.Parcelable
-import com.example.myapplication.data.api.response.ProductItem
-import com.example.myapplication.data.api.response.ReservationItem
-import com.example.myapplication.data.api.response.SurveyItem
+import com.example.myapplication.data.api.response.*
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 
@@ -18,7 +16,8 @@ data class UserInformation(
     val roadAddress: String? = null,
     val detailAddress: String? = null,
     val numOfInterestedCompanies: Int? = null,
-    val surveyList: List<@RawValue SurveyItem>? = null,
-    val productList: List<@RawValue ProductItem>?= null,
-    val companyList: List<@RawValue ReservationItem>?= null
+    val zipCode: Int? = null,
+    val surveyList: List<@RawValue SurveyInformation>? = null,
+    val productList: List<@RawValue ProductInformation>? = null,
+    val reservationList: List<@RawValue ReservationInformation>? = null
 ): Parcelable

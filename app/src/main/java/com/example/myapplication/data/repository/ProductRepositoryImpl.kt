@@ -64,5 +64,4 @@ class ProductRepositoryImpl(
     private fun getCurrentUser(): String? {
         return preferenceManager.getUserId()
     }
-
 }

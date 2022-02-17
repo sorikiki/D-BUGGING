@@ -1,10 +1,5 @@
 package com.example.myapplication.presentation.home
 
-import android.util.Log
-import androidx.annotation.MainThread
-import androidx.annotation.UiThread
-import com.example.myapplication.data.preference.PreferenceManager
-import com.example.myapplication.data.preference.SharedPreferenceManager
 import com.example.myapplication.data.repository.CompanyRepository
 import com.example.myapplication.data.repository.UserRepository
 import kotlinx.coroutines.*
@@ -15,19 +10,28 @@ class HomePresenter(
     private val view: HomeActivity
 ) : HomeContract.Presenter {
 
+    lateinit var userId: String
+
     override val scope: CoroutineScope = MainScope()
 
     override fun onViewCreated() {
-        setCurrentUserId()
-        setCurrentUserName()
+        setAccumulatedNumberOfReservations()
     }
 
     override fun setCurrentUserId(): String {
-        return userRepository.getCurrentUserId() ?: NO_USER
+        userId = userRepository.getPreferenceUserId() ?: NO_USER
+        return userId
     }
 
     override fun setCurrentUserName(): String {
-        return userRepository.getCurrentUserName() ?: NO_USER
+        return userRepository.getPreferenceUserName() ?: NO_USER
+    }
+
+    override fun setAccumulatedNumberOfReservations() {
+        scope.launch {
+            val number = companyRepository.requestNumberOfReservations(userId)
+            view.showAccumulatedNumberOfReservations(number)
+        }
     }
 
     override fun logOutUser() {

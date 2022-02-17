@@ -11,7 +11,9 @@
         android:label="회원가입">
         <action
             android:id="@+id/action_registerFragment_to_registerFragmentCompleted"
-            app:destination="@id/registerFragmentCompleted" />
+            app:destination="@id/registerFragmentCompleted"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/registerFragmentCompleted"
